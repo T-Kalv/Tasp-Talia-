@@ -37,25 +37,3 @@ while True:
             toast.set_audio(audio.LoopingAlarm9, loop=True)#Notify user to buy stock through sound alert
             toast.show()
         time.sleep(1)#Incase notifications come at the same time    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
