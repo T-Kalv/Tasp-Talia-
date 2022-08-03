@@ -15,8 +15,11 @@ I wanted to create this program so it could notfiy me when it's a good time to b
 ![image](https://user-images.githubusercontent.com/48865863/180290704-b76c8172-b522-49d0-86e5-b65726d6a117.png)
 
 
+Also it's designed to work in the background and can be run and stopped in the traybar (so you can run it while you're doing other things) but you can look at the data in the console if you want :/
 
-Also it's designed to work in the background (so you can run it while you're doing other things) but you can look at the data in the console if you want :/
+![image](https://user-images.githubusercontent.com/48865863/182684627-c67c2751-0863-4ba5-b236-b2d5236c4076.png)
+
+![image](https://user-images.githubusercontent.com/48865863/182685192-3cddf2c8-62ce-43b3-9795-910492e24ec3.png)
 
 ![image](https://user-images.githubusercontent.com/48865863/180289527-9f21c3ef-8547-4485-8786-d572ead93305.png)
 
