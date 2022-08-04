@@ -1,23 +1,18 @@
-#Uses data from: https://finance.yahoo.com
-import os
-import time
-import datetime
-import pandas_datareader as web
+# Uses data from: https://finance.yahoo.com
+import os, time, datetime, pandas_datareader as web, pystray, PIL.Image
 from winotify import Notification, audio
-import pystray
-import PIL.Image
 
 image = PIL.Image.open("traybaricon.png")
 
-def on_clicked(icon, item):#Runs program from the traybar
-    if str(item) == "Run TASP":#Runs the TASP program
-        now = datetime.datetime.now()#Shows current date and time when TASP is run
+def on_clicked(icon, item):             # Runs program from the traybar
+    if str(item) == "Run TASP":         # Runs the TASP program
+        now = datetime.datetime.now()   # Shows current date and time when TASP is run
         print(now)
         print("\n")
         time.sleep(1)
-        symbols = ["AMD"]#Stock symbol/ticker
-        max_value = [110]#Specify the max price to sell
-        low_value = [99]#Specify the lowest price to buy    
+        symbols = ["AMD"]       # Stock symbol/ticker
+        max_value = [110]       #Specify the max price to sell
+        low_value = [99]        #Specify the lowest price to buy    
         while True:
             last_price_update = [web.DataReader(symbol, "yahoo")["Adj Close"][-1] for symbol in symbols]#Uses the yahoo finance api to get the last_prices of the stock
             print(last_price_update)
