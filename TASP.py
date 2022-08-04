@@ -1,10 +1,7 @@
 # Totally Auto Stock Pinger
-# Uses data from: https://finance.yahoo.com
-from datetime import datetime
-import threading, os, time, pandas_datareader as web, pystray, PIL.Image
-from winotify import Notification, audio
+# https://github.com/T-Kalv/T.A.S.P
 
-# edit these
+# you can edit these
 stuff = [
     {
         "symbol":   "AMD",
@@ -16,22 +13,27 @@ stuff = [
         "symbol":   "AAPL",
         "max":      170.0,
         "min":      160.0
-    },
+    }
 ]
 
 # how often, in seconds, to check stocks
 frequency = 10
 
 
+# actual code below here
 
-image = PIL.Image.open("traybaricon.png")
-running = False
+import threading, os, time, pystray, PIL.Image
+import pandas_datareader as web
+from datetime import datetime
+from winotify import Notification, audio
 
 def fetch(stuff):
+    # yes, creative, i know
     return [web.DataReader(thing["symbol"], "yahoo")["Adj Close"][-1] for thing in stuff]
 
 def go():
     lastran = datetime.fromtimestamp(0) # epoch
+    # yes, that's right, we're running this on Jan 1st, 1970
     global running
     while running:
         dtime = datetime.now() - lastran
@@ -61,7 +63,7 @@ def go():
                     toast.add_actions(label = "Go To Stockbroker To BUY Stock!")
                     toast.set_audio(audio.LoopingAlarm9, loop=True)     # Notify user to buy stock through sound alert
                     toast.show()
-                    time.sleep(1)   # In case notifications come at the same time
+                    time.sleep(0.5)   # In case notifications come at the same time
 
 def on_clicked(icon, item):
     global running, x
@@ -78,6 +80,7 @@ def on_clicked(icon, item):
         print("exiting")
         icon.stop()
 
+image = PIL.Image.open("traybaricon.png")
 icon = pystray.Icon("TASP", image, menu=pystray.Menu(#Allows user to run the program in the taskbar tray
     pystray.MenuItem("Start", on_clicked),
     pystray.MenuItem("Stop", on_clicked),
@@ -85,5 +88,7 @@ icon = pystray.Icon("TASP", image, menu=pystray.Menu(#Allows user to run the pro
 ))
 
 print("running")
+running = False # hahah, uno reverse card
+
 x = threading.Thread(target=go, daemon=True)    # good ol' multithreading
 icon.run()
