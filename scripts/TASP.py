@@ -6,7 +6,7 @@
 stuff = [
     {
         "symbol":   "TSLA",
-        "max":      850.0,
+        "max":      870.0,
         "min":      700.0
     },
 

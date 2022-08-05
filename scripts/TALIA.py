@@ -9,6 +9,7 @@ import sys
 import datetime as dt
 import os
 import time
+import threading
 
 def TALIA_main():
     with open('data/portfolio.pkl', 'rb') as f:#Access the prebuilt portfolio containing APPL & TSLA
@@ -101,7 +102,8 @@ def TALIA_main():
             data = web.DataReader(symbol, 'yahoo', begin, finish)
             colors = mpf.make_marketcolors(up='#00ff00', down='#ff0000', wick='inherit', edge='inherit', volume='in')
             mpf_style = mpf.make_mpf_style(base_mpf_style='nightclouds', marketcolors=colors)
-            mpf.plot(data, type='candle', style=mpf_style, volume=True)
+            chart_proc = threading.Thread(target=open_graph,args=[data,mpf_style],daemon=True)
+            chart_proc.start()
 
         def portfolio_value():#Shows value of stock portfolio to user
             print('\033[1;37m')
@@ -148,3 +150,6 @@ def TALIA_main():
         while True:
             text = input("")
             tasp.request(text)
+
+def open_graph(data, mpf_style):
+    mpf.plot(data, type='candle', style=mpf_style, volume=True)
