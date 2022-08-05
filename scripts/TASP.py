@@ -34,6 +34,7 @@ except ImportError:
     exit()
 
 #Notifications
+os.chdir("..")
 startnotif = Notification(app_id="TASP",
                     title="TASP is currently running!", 
                     msg="Use the System Tray icon to pause!",
@@ -99,7 +100,6 @@ def on_clicked(icon, item):
     elif str(item) == "Exit":
         icon.stop()
 
-os.chdir("..")
 image = PIL.Image.open("assets/traybaricon.ico")
 icon = pystray.Icon("TASP", image, menu=pystray.Menu(#Allows user to run the program in the taskbar tray
     pystray.MenuItem("Start", on_clicked),
