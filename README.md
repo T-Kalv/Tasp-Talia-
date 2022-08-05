@@ -26,7 +26,7 @@ You can also plot chart, update portfolio, view portfolio, portfolio gains, port
 
 # Why?
 
-I wanted to create this program so it could notfiy me when it's a good time to buy stocks and to sell stocks through the use of the set max price and low price for each stock (which you can change in the code). In this case, the default stock is AAPL(Apple) and the max price to sell is 112 and 110 to buy. You can choose to change these to whatever you want*
+I wanted to create this tasp program so it could notfiy me when it's a good time to buy stocks and to sell stocks through the use of the set max price and low price for each stock (which you can change in the code). In this case, the default stock is AAPL(Apple) and the max price to sell is 112 and 110 to buy. You can choose to change these to whatever you want*
 
 ![image](https://user-images.githubusercontent.com/48865863/180290704-b76c8172-b522-49d0-86e5-b65726d6a117.png)
 
