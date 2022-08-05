@@ -11,7 +11,7 @@ T.A.S.P is a stock price notifier bot that notifies the user when their desired 
 It uses the yahoo finance api from the yahoo finace website (totally not sponsored *cough cough): https://finance.yahoo.com/
 Also it's now built with TALIA.
 
-# What's T.A.L.A (Totally Artificial Language Intelligence Assistant)?
+# What's T.A.L.I.A (Totally Artificial Language Intelligence Assistant)?
 T.A.L.I.A stands for Totally Artificial Language Intelligence Assistant and was made in Python. I couldn't think of any other names as well :/
 
 ![image](https://user-images.githubusercontent.com/48865863/183155683-522c19e5-c369-4a12-938d-8ad67e7e2558.png)
