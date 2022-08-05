@@ -1,0 +1,3 @@
+traybaricon.ico = https://icons8.com/icon/48218/us-dollar-circled
+sell.ico = https://icons8.com/icon/46081/low-price
+buy.ico = https://icons8.com/icon/44052/buying

@@ -1,3 +1,4 @@
+# TALIA aka Totally Artificial Language Intelligence Assistant
 import pyfiglet
 from neuralintents import GenericAssistant
 import matplotlib.pyplot as plt
@@ -7,13 +8,37 @@ import pickle
 import sys
 import datetime as dt
 import os
+import time
 
-def messenger_main():
+def TALIA_main():
     with open('data/portfolio.pkl', 'rb') as f:#Access the prebuilt portfolio containing APPL & TSLA
         portfolio = pickle.load(f)
         print('\033[1;37m')
-        welcome = pyfiglet.figlet_format("Welcome To T.A.S.P Messenger!")
+        welcome = pyfiglet.figlet_format("Welcome To T.A.L.I.A Messenger!")
         print(welcome)
+        time.sleep(4)
+        print(r"""
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@%**========+*#%@@@@@@@@@@@@
+@@@@@@@@@@*+=++*********+*+==*%@@@@@@@@@
+@@@@@@@%*=+++++##%%%%%%%#+++++++#@@@@@@@
+@@@@@@*=+*=+%@@@@@@@@@@@@@@@#=**==@@@@@@
+@@@@@+=**=%@@@@@@@@#=@@@@@@@@@==%++@@@@@
+@@@@#=*+=%@@@@@@..======@@@@@@@+=*==@@@@
+@@@@==*=*@@@@@@@.@@@@@@@@@@@@@@@==*=#@@@
+@@@@==#=#@@@@@@@.+######@@@@@@@@==#=#@@@
+@@@@==#=#@@@@@@@#######-+@@@@@@@==#=#@@@
+@@@@==#=#@@@@@@@@@@@@@@++@@@@@@@==#=#@@@
+@@@@*=*==@@@@@@@=======:*@@@@@@*=*++@@@@
+@@@@@+=*++@@@@@@@@@#=@@@@@@@@@*+**+%@@@@
+@@@@@%*+**+*%@@@@@@@@@@@@@@@%+***+%@@@@@
+@@@@@@@%++**++*%@@@@@@@@%*+++*++*@@@@@@@
+@@@@@@@@@#++****+++++++++****+*@@@@@@@@@
+@@@@@@@@@@@@%*++********++**%@@@@@@@@@@@
+@@@@@@@@@@@@@@@@%%%%%%%%@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+""")
         print("-----------------------------------------------------")
         print("\n")
 
@@ -37,17 +62,17 @@ def messenger_main():
             with open('data/portfolio.pkl', 'wb') as f:
                 pickle.dump(portfolio, f)
             
-        def update_portfolio():
+        def update_portfolio():#Updates user stock portfolio
             print('\033[1;37m')
-            symbol = input("Which stock would you like to have: ")#ticker
-            quantity = input("How many shares would you like to have: ")#amount
+            symbol = input("Which stock would you like to have: ")#Stock/ticker
+            quantity = input("How many shares would you like to have: ")
             if symbol in portfolio.keys():
                 portfolio[symbol] += int(quantity)
             else:
                 portfolio[symbol] = int(quantity)
                 save_portfolio()
 
-        def remove_portfolio():
+        def remove_portfolio():#Removes shares/stock from user stock portfolio
             print('\033[1;37m')
             symbol = input("Which stock would you like to sell: ")
             quantity = input("How many shares would you like to sell: ")
@@ -60,13 +85,13 @@ def messenger_main():
             else:
                 print(f"You don't own any shares in {symbol}")
             
-        def view_portfolio():
+        def view_portfolio():#Shows stock portfolio to user
             print('\033[1;37m')
             print("This is you current portfolio: ")
             for symbol in portfolio.keys():
                 print(f"You currently own {portfolio[symbol]} shares in {symbol}")
             
-        def chart_plot():
+        def chart_plot():#Shows stock chart to user
             print('\033[1;37m')
             symbol = input("Enter a stock symbol: ")
             begin_str = input("Enter a start date in the DD/MM/YYYY format: ")
@@ -78,7 +103,7 @@ def messenger_main():
             mpf_style = mpf.make_mpf_style(base_mpf_style='nightclouds', marketcolors=colors)
             mpf.plot(data, type='candle', style=mpf_style, volume=True)
 
-        def portfolio_value():
+        def portfolio_value():#Shows value of stock portfolio to user
             print('\033[1;37m')
             sum = 0
             for symbol in portfolio.keys():
@@ -87,14 +112,14 @@ def messenger_main():
                 sum += price
             print(f"Your current portfolio is valued at {sum} USD")
             
-        def portfolio_gains():
+        def portfolio_gains():#Shows stock gains
             print('\033[1;37m')
             start_date = input("Please enter the starting date in the YYYY-MM-DD format: ")
             try:
                 for symbol in portfolio.keys():
                     data = web.DataReader(symbol, 'yahoo')
-                    current_price = data['Close'].iloc[-1]#price_now
-                    start_price = data.loc[data.index == start_date]['Close'].values[0]#price_then , starting_date
+                    current_price = data['Close'].iloc[-1]
+                    start_price = data.loc[data.index == start_date]['Close'].values[0]
                     current_sum += current_price
                     start_sum += start_price
                 print(f"Your portfolio gains are: {current_sum-start_sum} USD")
@@ -114,7 +139,7 @@ def messenger_main():
             'portfolio_gains': portfolio_gains,
             "portfolio_value": portfolio_value
         }
-        tasp = GenericAssistant('data/intents.json', mappings, "TASP_Messenger_Model")#Uses the pre-trained TASP model to enable AI-like messaging
+        tasp = GenericAssistant('data/intents.json', mappings, "TALIA_Messenger_Model")#Uses the pre-trained TALIA model to enable AI-like messaging using TALIA
         os.chdir("data")
         tasp.load_model()
         os.chdir("..")
