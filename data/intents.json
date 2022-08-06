@@ -15,15 +15,39 @@
 
     {"tag": "name", 
     "patterns": ["what is your name", "what's your name", "who are you", "what do I call you", "what should I call you"],
-    "responses": ["My name is TASP", "I'm TASP", "I'm called TASP"]
+    "responses": ["My name is TALIA", "I'm TALIA", "I'm called TALIA"]
 
 },
 
 
     {"tag": "tasp", 
-    "patterns": ["what does TASP stand for", "what is TASP", "what does TASP mean", "who is TASP"],
-    "responses": ["T.A.S.P stands for: Totally Auto Stock Pinger"]
+    "patterns": ["what does TALIA stand for", "what is TALIA", "what does TALIA mean", "who is TALIA"],
+    "responses": ["T.A.L.I.A stands for: Totally Artificial Language Intelligence Assistant"]
 
+
+},
+
+    {"tag": "time", 
+    "patterns": ["what is the time", "what's the time", "what is the time now", "what's the time", "what time is it", "time"],
+    "responses": ["The Time Is..."]
+
+},
+
+    {"tag": "date", 
+    "patterns": ["what is the date", "what's the date today", "what is the date today", "what's the date", "date", "today's date"],
+    "responses": ["The Time Is..."]
+
+},
+
+    {"tag": "getweather", 
+    "patterns": ["what is the weather", "what's the weather", "what is the weather now", "weather forecase", "weather"],
+    "responses": ["The Weather Is..."]
+
+},
+
+    {"tag": "joke", 
+    "patterns": ["tell me a joke", "tell me a funny joke", "funny joke", "joke", ""],
+    "responses": ["Here's A Joke..."]
 
 },
 

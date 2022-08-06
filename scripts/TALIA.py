@@ -8,8 +8,11 @@ import pickle
 import sys
 import datetime as dt
 import os
-import time
 import threading
+import datetime
+import requests
+
+import pyjokes
 
 def TALIA_main():
     with open('data/portfolio.pkl', 'rb') as f:#Access the prebuilt portfolio containing APPL & TSLA
@@ -17,6 +20,7 @@ def TALIA_main():
         print('\033[1;37m')
         welcome = pyfiglet.figlet_format("Welcome To T.A.L.I.A Messenger!")
         print(welcome)
+        import time
         time.sleep(4)
         print(r"""
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -42,9 +46,15 @@ def TALIA_main():
 """)
         print("-----------------------------------------------------")
         print("\n")
+        time.sleep(1)
+        now = datetime.datetime.now()
+        print(now)
+        print("\n")
+        time.sleep(2)
+        print("Hi, How Can I Help?")
 
         def greeting():
-            print("Hey!")
+            print("Hi There!")
 
         def goodbye():
             print("Bye!")
@@ -54,10 +64,33 @@ def TALIA_main():
             print("You're Welcome!")
 
         def name():
-            print("I'm TASP")
+            print("I'm TALIA")
 
         def tasp():
-            print("T.A.S.P stands for: Totally Auto Stock Pinger")
+            print("T.A.L.I.A stands for: Totally Artificial Intelligence System")
+
+        def time():#Shows current time to user
+            now = datetime.datetime.now()
+            print("The Current Time Is...")
+            print(now)
+
+        def date():#Shows the current date to user
+            now = datetime.datetime.now()
+            print("The Date Today Is...")
+            print(now)
+
+        def weather():#Shows the weather for the user by using https://www.wttr.in/
+            location = input("Which City Would You Like The Weather For?")
+            print('This Is The Weather For: ' + location)
+            url = 'https://wttr.in/{}'.format(location)
+            res = requests.get(url)
+            print(res.text)
+        
+        def joke():
+            print("Here's A Joke...")
+            new_joke = pyjokes.get_joke(language="en", category="all")
+            print(new_joke)
+
 
         def save_portfolio():
             with open('data/portfolio.pkl', 'wb') as f:
@@ -134,6 +167,10 @@ def TALIA_main():
             'thanks': thanks,
             'name': name,
             'tasp': tasp,
+            'time': time,
+            'date': date,
+            'joke': joke,
+            'getweather': weather,
             'chart_plot': chart_plot,
             'update_portfolio': update_portfolio,
             'remove_portfolio': remove_portfolio,
@@ -151,5 +188,5 @@ def TALIA_main():
             text = input("")
             tasp.request(text)
 
-def open_graph(data, mpf_style):
-    mpf.plot(data, type='candle', style=mpf_style, volume=True)
+    def open_graph(data, mpf_style):
+        mpf.plot(data, type='candle', style=mpf_style, volume=True)
