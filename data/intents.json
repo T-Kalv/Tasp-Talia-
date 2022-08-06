@@ -72,8 +72,8 @@
 },
 
     {"tag": "view_portfolio", 
-    "patterns": ["view portfolio", "show portfolio"],
-    "responses": ["Stock Price"],
+    "patterns": ["view portfolio", "show portfolio", "show stock"],
+    "responses": ["Showing portfolio"],
     "context_set": ""
 
 

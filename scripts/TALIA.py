@@ -182,6 +182,7 @@ def TALIA_main():
         os.chdir("data")
         tasp.load_model()
         os.chdir("..")
+        #For re-training TALIA model below!
         #tasp.train_model()
         #tasp.save_model()
         while True:
