@@ -1,4 +1,4 @@
-# T.A.S.P (aka Totally Auto Stock Pinger)
+# T.A.S.P (aka Totally Auto Stock Pinger) Preview
 
 # What's T.A.S.P?
 T.A.S.P stands for "Totally Auto Stock Pinger" and was made in Python. I couldn't think of any other names :/
