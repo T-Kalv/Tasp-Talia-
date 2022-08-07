@@ -7,7 +7,7 @@ T.A.S.P stands for "Totally Auto Stock Pinger" and was made in Python. I couldn'
 
 ![image](https://user-images.githubusercontent.com/48865863/183157895-a20f57ed-5a9e-461c-a6aa-67441e7bb634.png)
 
-T.A.S.P is a stock price notifier bot that notifies the user when their desired stocks need to be sold and also need to be bought.
+T.A.S.P* is a stock price notifier bot that notifies the user when their desired stocks need to be sold and also need to be bought.
 It uses the yahoo finance api from the yahoo finace website (totally not sponsored *cough cough): https://finance.yahoo.com/
 Also it's now built with TALIA.
 
@@ -22,7 +22,8 @@ The T.A.L.I.A Messenger* was included to allow AI like chat based funtionality f
 
 You can also plot chart, update portfolio, view portfolio, portfolio gains, portfolio value...
 
-****Talia Messenger is currently in a beta developer preview stage and subject to availability...***
+****Tasp & Talia Messenger are currently in a beta developer preview stage. 
+Current features are subject to change. Some features, applications and services may not be available in all regions or all languages.***
 
 # Why?
 
