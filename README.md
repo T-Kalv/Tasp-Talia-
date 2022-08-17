@@ -23,7 +23,7 @@ The T.A.L.I.A Messenger* was included to allow AI like chat based funtionality f
 You can also plot chart, update portfolio, view portfolio, portfolio gains, portfolio value...
 
 ****Tasp & Talia Messenger are currently in a beta developer preview stage. 
-Current features are subject to change. Some features, applications and services may not be available in all regions or all languages.***
+Current features are subject to change. Some features, applications and services may not be available in all regions or all languages or all platforms.***
 
 # Why?
 
