@@ -1,4 +1,4 @@
-# TASP aka Totally Auto Stock Pinger
+# TASP aka Totally Auto Stock Pinger (now cross-platform...)
 # https://github.com/T-Kalv/T.A.S.P
 #Uses data from: https://finance.yahoo.com
 
@@ -26,6 +26,7 @@ try:
     from datetime import datetime
     from winotify import Notification, audio
     import TALIA
+    from notifypy import Notify
 
 except ImportError:
     import deps
@@ -34,17 +35,17 @@ except ImportError:
     exit()
 
 #Notifications
-os.chdir("..")
-startnotif = Notification(app_id="TASP",
-                    title="TASP is currently running!", 
-                    msg="Use the System Tray icon to pause!",
-                    icon=os.path.join(os.getcwd(), "assets/traybaricon.ico"),
-                    duration="short")
-endnotif = Notification(app_id="TASP",
-                    title="TASP has been paused!", 
-                    msg="Use the System Tray icon to resume!",
-                    icon=os.path.join(os.getcwd(), "assets/traybaricon.ico"),
-                    duration="short")
+os.chdir("../")
+startnotif = Notify()
+startnotif.title = "TASP is currently running!"
+startnotif.message = "Use the System Tray icon to pause!"
+startnotif.icon = "assets/traybaricon.ico"
+
+endnotif = Notify()
+endnotif.title = "TASP has been paused"
+endnotif.message = "Use the System Tray icon to resume!"
+endnotif.icon = "assets/traybaricon.ico"
+
 
 def fetch(stuff):
     # yes, creative, i know
@@ -61,33 +62,28 @@ def go():
             last_price_update = fetch(stuff)
             for i in range(len(stuff)):
                 if last_price_update[i] > stuff[i]["max"]:
-                    toast = Notification(app_id="TASP",
-                            title="Price Change For: " + stuff[i]["symbol"], 
-                            msg=stuff[i]["symbol"]+ f" Has Reached A Price Of: {last_price_update[i]:.2f}. You Should Consider Selling!", 
-                            icon=os.path.join(os.getcwd(), "assets/sell.ico"), 
-                            duration="long")
-                    toast.add_actions(label = "Go To Stockbroker To SELL Stock!")
-                    toast.set_audio(audio.LoopingAlarm10, loop=True)#Notify user to sell stock through sound alert
-                    toast.show()    
-                elif last_price_update[i] < stuff[i]["min"]:
-                    toast = Notification(app_id="TASP",
-                            title="Price Change For: " + stuff[i]["symbol"], 
-                            msg=stuff[i]["symbol"]+ f" Has Reached A Price Of: {last_price_update[i]:.2f}. You Should Consider Buying!", 
-                            icon=os.path.join(os.getcwd(), "assets/buy.ico"), 
-                            duration="long")
-                    toast.add_actions(label = "Go To Stockbroker To BUY Stock!")
-                    toast.set_audio(audio.LoopingAlarm9, loop=True)#Notify user to buy stock through sound alert
-                    toast.show()
+                    sellnotif = Notify()#Notify user to sell stock
+                    sellnotif.title = "Price Change For: " + stuff[i]["symbol"]
+                    sellnotif.message = stuff[i]["symbol"]+ f" Has Reached A Price Of: {last_price_update[i]:.2f}. You Should Consider Selling!"
+                    sellnotif.icon = "assets/sell.ico"
+                    sellnotif.send()
+                    time.sleep(1)
+                elif last_price_update[i] < stuff[i]["min"]:#Notify user to buy stock
+                    buynotif = Notify()
+                    huynotif.title = "Price Change For: " + stuff[i]["symbol"]
+                    buynotif.message = stuff[i]["symbol"]+ f" Has Reached A Price Of: {last_price_update[i]:.2f}. You Should Consider Buying!"
+                    buynotif.icon = "assets/buy.ico"
+                    buynotif.send()
                     time.sleep(1)#In case notifications come at the same time
 
 def on_clicked(icon, item):
     global running, x, bot
     if str(item) == "Start" and not x.is_alive():
-        startnotif.show()
+        startnotif.send()
         running = True
         x.start()
     elif str(item) == "Stop" and x.is_alive():
-        endnotif.show()
+        endnotif.send()
         running = False
         x.join()
         x = None
@@ -107,12 +103,13 @@ icon = pystray.Icon("TASP", image, menu=pystray.Menu(#Allows user to run the pro
     pystray.MenuItem("TALIA", on_clicked),
     pystray.MenuItem("Exit", on_clicked)#Exit 
 ))
-notif = Notification(app_id="TASP",
-                    title="TASP is running", 
-                    msg="Use the System Tray icon to pause or access TALIA.",
-                    icon=os.path.join(os.getcwd(), "assets/traybaricon.ico"),
-                    duration="short")
-notif.show()
+notif = Notify()
+notif.title = "TASP is running"
+notif.message = "Use the System Tray icon to pause or access TALIA!"
+notif.icon = "assets/traybaricon.ico"
+notif.send()
+
+
 running = True
 x = threading.Thread(target=go, daemon=True)#good ol' multithreading
 x.start()
