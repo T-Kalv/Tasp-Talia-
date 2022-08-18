@@ -13,6 +13,9 @@ def install():
         "neuralintents",
         "matplotlib",
         "mplfinance"
+        "requests"
+        "pyttsx3"
+        "pyjokes"
     ])
     
     # this thing
