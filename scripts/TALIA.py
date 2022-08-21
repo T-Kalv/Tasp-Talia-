@@ -14,6 +14,11 @@ import requests
 import pyjokes
 import pyttsx3
 import time
+import wikipedia
+import urllib.request
+import re 
+import webbrowser
+
 engine = pyttsx3.init()
 engine.setProperty('rate', 220) 
 
@@ -25,12 +30,8 @@ def TALIA_main():
         welcome = pyfiglet.figlet_format("Welcome To T.A.L.I.A Messenger!")
         print(welcome)
         engine.say("Welcome To Talia Messenger!")
-        engine.say("Importing all preferences from home interface")
-        time.sleep(2)
-        engine.say("Systems are now fully operational")
-        engine.runAndWait()
         import time
-        time.sleep(4)
+        time.sleep(2)
         print(r"""
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -54,8 +55,11 @@ def TALIA_main():
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 """)
         print("-----------------------------------------------------")
+        engine.say("Importing all preferences from home interface")
+        time.sleep(2)
+        engine.say("Systems are now fully operational")
+        engine.runAndWait()
         print("\n")
-        time.sleep(1)
         now = datetime.datetime.now()
         print(now)
         print("\n")
@@ -117,13 +121,61 @@ def TALIA_main():
             res = requests.get(url)
             print(res.text)
         
-        def joke():
+        def joke():#Shows a random joke to the user
             engine.say("Here Is A Joke")
             print("Here's A Joke...")
             new_joke = pyjokes.get_joke(language="en", category="all")
             engine.say(new_joke)
             print(new_joke)
             engine.runAndWait()
+
+        def wiki():#Wikipedia Search
+            engine.say("What would you like to wiki search?")
+            engine.runAndWait()
+            query = input("What would you like to wiki search?")
+            print (wikipedia.summary(query))
+            engine.say("According to Wikipedia...")
+            engine.say (wikipedia.summary(query))
+            engine.runAndWait()
+            
+
+        def youtube():#YouTube Search
+            engine.say("What would you like to YouTube search?")
+            engine.runAndWait()
+            search_keyword = input("What would you like to YouTube search?")
+            html = urllib.request.urlopen("https://www.youtube.com/results?search_query="+search_keyword)
+            video_ids = re.findall(r"watch\?v=(\S{11})", html.read().decode())
+            print("Here's what I found on YouTube...")
+            engine.say("Here's what I found on YouTube...")
+            print("https://www.youtube.com/watch?v="+video_ids[0])
+            engine.runAndWait()
+
+        def app():
+            engine.say("What would you like to open?")
+            response = input("What would you like to open?")
+            engine.say("Sorry Open Command is unavailable at the moment!")
+            print("Sorry Open Command is unavailable atm!")
+            #if "youtube" or "yt" or "YouTube" or "you tube" or "You Tube" in response:
+            #    engine.say("Opening YouTube...")
+            #    webbrowser.open("youtube.com")
+            #elif "google" in response:
+            #    engine.say("Opening Google...")
+            #    webbrowser.open("google.com")
+            # "stackoverflow" or "stack overflow" in response:
+            #engine.say("Opening Stackoverflow...")
+            #    webbrowser.open("stackoverflow.com") 
+            #elif "github" or "GitHub" in response:
+            #    engine.say("Opening GitHub...")
+            #    webbrowser.open("github.com")
+            #elif "duckduckgo" in response:
+            #    engine.say("Opening Duckduckgo...")
+            #    webbrowser == ("duckduckgo.com")
+            #else:
+            #    engine.say("Sorry I don't understand!")
+            #    print("Sorry I don't understand!")
+            engine.runAndWait()
+                
+
 
         def save_portfolio():
             with open('data/portfolio.pkl', 'wb') as f:
@@ -207,6 +259,11 @@ def TALIA_main():
             except IndexError:
                 engine.say("ERROR No Trades On This Date!")
                 print("ERROR No Trades On This Date!")
+
+        def understand():
+            engine.say("Sorry I don't understand!")
+            print("Sorry I don't understand!")
+            engine.runAndWait()
         
         mappings = {
             'greeting': greeting,
@@ -218,6 +275,10 @@ def TALIA_main():
             'date': date,
             'joke': joke,
             'getweather': weather,
+            'wiki': wiki,
+            'youtube': youtube,
+            'app': app,
+            'understand': understand,
             'chart_plot': chart_plot,
             'update_portfolio': update_portfolio,
             'remove_portfolio': remove_portfolio,

@@ -46,8 +46,26 @@
 },
 
     {"tag": "joke", 
-    "patterns": ["tell me a joke", "tell me a funny joke", "funny joke", "joke", ""],
+    "patterns": ["tell me a joke", "tell me a funny joke", "funny joke", "joke"],
     "responses": ["Here's A Joke..."]
+
+},
+
+    {"tag": "wiki", 
+    "patterns": ["wiki", "wikipedia", "wiki search", "wikipedia search"],
+    "responses": ["According to Wikipedia..."]
+
+},
+
+    {"tag": "app", 
+    "patterns": ["open app", "open", "app", "application"],
+    "responses": ["Opening..."]
+
+},
+
+    {"tag": "youtube", 
+    "patterns": ["yt", "youtube", "you tube", "YouTube", "You Tube", "vid", "video"],
+    "responses": ["Here's what I found on YouTube..."]
 
 },
 
@@ -82,6 +100,13 @@
     {"tag": "portfolio_value", 
     "patterns": ["what's my portfolio worth", "portfolio value"],
     "responses": ["Portfolio Worth"],
+    "context_set": ""
+
+},
+
+    {"tag": "understand", 
+    "patterns": [""],
+    "responses": ["Sorry I don't understand"],
     "context_set": ""
 
 },
