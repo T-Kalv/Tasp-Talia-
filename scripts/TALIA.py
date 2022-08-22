@@ -18,6 +18,11 @@ import wikipedia
 import urllib.request
 import re 
 import webbrowser
+from phue import Bridge
+from ph_ip_address import bridge_ip_address
+from googletrans import Translator, constants
+from pprint import pprint
+from requests_html import HTMLSession
 
 engine = pyttsx3.init()
 engine.setProperty('rate', 220) 
@@ -138,7 +143,6 @@ def TALIA_main():
             engine.say (wikipedia.summary(query))
             engine.runAndWait()
             
-
         def youtube():#YouTube Search
             engine.say("What would you like to YouTube search?")
             engine.runAndWait()
@@ -174,7 +178,83 @@ def TALIA_main():
             #    engine.say("Sorry I don't understand!")
             #    print("Sorry I don't understand!")
             engine.runAndWait()
-                
+      
+        def access_lights(bridge_ip_address):
+            b = Bridge(bridge_ip_address)
+            light_names_list = b.get_light_objects('name')
+            return light_names_list
+
+        def philips_hue():#Controls Philips Hue Lights
+            b = Bridge(bridge_ip_address)
+            b.connect()
+            print("Here are the current lights you can control:")
+            engine.say("Here are the current lights you can control:")
+            engine.runAndWait()
+            lights = b.lights
+            for l in lights:
+                print(l.name)#Lists all available lights to control
+                engine.say(l.name)
+            engine.say("What would you like to do?")
+            engine.runAndWait()
+            response = input("What would you like to do?")
+            if response in ['turn off all lights', 'turn off', 'turn off light']:#Turns off lights
+                lights = access_lights(bridge_ip_address)
+                for light in lights:
+                    lights[light].on = False
+                print("Turning off all the light")
+                engine.say("Turning off all the light")
+                engine.runAndWait()
+            elif response in ['turn on all lights', 'turn on', 'turn on light']:#Turns on lights
+                lights = access_lights(bridge_ip_address)
+                for light in lights:
+                    lights[light].on = True
+                print("Turning on all the light")
+                engine.say("Turning on all the light")
+                engine.runAndWait()
+            else:
+                engine.say("Sorry only turning on and off commands are avaliable at the moment!")
+                print("Sorry only turning on and off commands are available atm!")
+            engine.runAndWait()
+            
+        def translate():
+            translator = Translator()
+            engine.say("What langauge would you like to translate to? ")
+            engine.runAndWait()
+            language = input("What language would you like to translate to? ")
+            engine.say("Type the phrase you would like to translate: ")
+            engine.runAndWait()
+            response = input("Type the phrase you would like to translate: ")
+            translation = translator.translate((response), dest=(language))
+            engine.say(f"{translation.origin} ({translation.src}) --> {translation.text} ({translation.dest})")
+            engine.runAndWait()
+            print(f"{translation.origin} ({translation.src}) --> {translation.text} ({translation.dest})")
+            
+
+        def news():
+            session = HTMLSession()
+            r = session.get('https://news.google.com/topstories?hl=en-GB&gl=GB&ceid=GB:en')#Shows news from Google News
+            r.html.render(sleep=1, scrolldown=2)
+            articles = r.html.find('article')
+            newslist = []
+            for item in articles:
+                try:
+                    newsitem = item.find('h3', first=True)
+                    title = newsitem.text
+                    link = newsitem.absolute_links
+                    newsarticle = {
+                        'title' : title,
+                        'link': link
+                    }
+                    newslist.append(newsarticle)
+                except:
+                    pass
+            print("Here's the latest news...")
+            engine.say("Here is the latest news")
+            engine.runAndWait()
+            print(len(newslist))
+
+
+
 
 
         def save_portfolio():
@@ -278,6 +358,9 @@ def TALIA_main():
             'wiki': wiki,
             'youtube': youtube,
             'app': app,
+            'philips_hue': philips_hue,
+            'translate': translate,
+            'news': news,
             'understand': understand,
             'chart_plot': chart_plot,
             'update_portfolio': update_portfolio,

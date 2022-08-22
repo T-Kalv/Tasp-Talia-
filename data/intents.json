@@ -69,6 +69,25 @@
 
 },
 
+    {"tag": "philips_hue", 
+    "patterns": ["light", "lights", "philips hue", "philips"],
+    "responses": ["Philips Hue command activating..."]
+
+},
+
+    {"tag": "translate", 
+    "patterns": ["translate", "translation"],
+    "responses": ["Translating response..."]
+
+},
+
+    {"tag": "news", 
+    "patterns": ["news", "latest news", "breaking news", "current news"],
+    "responses": ["Shwoing news..."]
+
+
+},
+
     {"tag": "chart_plot", 
     "patterns": ["plot chart", "chart plot", "plot stock", "stock chart"],
     "responses": ["Plotting Chart..."]
