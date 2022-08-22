@@ -154,7 +154,7 @@ def TALIA_main():
             print("https://www.youtube.com/watch?v="+video_ids[0])
             engine.runAndWait()
 
-        def app():
+        def app():#NEED TO FIX!!!
             engine.say("What would you like to open?")
             response = input("What would you like to open?")
             engine.say("Sorry Open Command is unavailable at the moment!")
@@ -230,20 +230,20 @@ def TALIA_main():
             print(f"{translation.origin} ({translation.src}) --> {translation.text} ({translation.dest})")
             
 
-        def news():
+        def news():#NEED TO FIX!!!
+            from requests_html import HTMLSession
             session = HTMLSession()
-            r = session.get('https://news.google.com/topstories?hl=en-GB&gl=GB&ceid=GB:en')#Shows news from Google News
+            url = 'https://news.google.com/topstories?hl=en-GB&gl=GB&ceid=GB:en'#Shows news from Google News
+            r = session.get(url)
             r.html.render(sleep=1, scrolldown=2)
             articles = r.html.find('article')
             newslist = []
             for item in articles:
                 try:
                     newsitem = item.find('h3', first=True)
-                    title = newsitem.text
-                    link = newsitem.absolute_links
                     newsarticle = {
-                        'title' : title,
-                        'link': link
+                        'title' : newsitem.text,
+                        'link': newsitem.absolute_links
                     }
                     newslist.append(newsarticle)
                 except:
@@ -251,7 +251,7 @@ def TALIA_main():
             print("Here's the latest news...")
             engine.say("Here is the latest news")
             engine.runAndWait()
-            print(len(newslist))
+            print(newslist)
 
 
 
