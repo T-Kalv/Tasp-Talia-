@@ -24,7 +24,6 @@ try:
     import threading, os, time, pystray, PIL.Image
     import pandas_datareader as web
     from datetime import datetime
-    from winotify import Notification, audio
     import TALIA
     from notifypy import Notify
 
@@ -46,12 +45,16 @@ endnotif.title = "TASP has been paused"
 endnotif.message = "Use the System Tray icon to resume!"
 endnotif.icon = "assets/traybaricon.ico"
 
+# deal with these later on
+sellnotif = Notify()
+buynotif = Notify()
 
 def fetch(stuff):
     # yes, creative, i know
     return [web.DataReader(thing["symbol"], "yahoo")["Adj Close"][-1] for thing in stuff]
 
 def go():
+    global sellnotif, buynotif
     lastran = datetime.fromtimestamp(0)#Let's gooooooo Jan 1st, 1970
     global running
     while running:
@@ -62,14 +65,14 @@ def go():
             last_price_update = fetch(stuff)
             for i in range(len(stuff)):
                 if last_price_update[i] > stuff[i]["max"]:
-                    sellnotif = Notify()#Notify user to sell stock
+                    #Notify user to sell stock
                     sellnotif.title = "Price Change For: " + stuff[i]["symbol"]
                     sellnotif.message = stuff[i]["symbol"]+ f" Has Reached A Price Of: {last_price_update[i]:.2f}. You Should Consider Selling!"
                     sellnotif.icon = "assets/sell.ico"
                     sellnotif.send()
                     time.sleep(1)
-                elif last_price_update[i] < stuff[i]["min"]:#Notify user to buy stock
-                    buynotif = Notify()
+                elif last_price_update[i] < stuff[i]["min"]:
+                    #Notify user to buy stock
                     huynotif.title = "Price Change For: " + stuff[i]["symbol"]
                     buynotif.message = stuff[i]["symbol"]+ f" Has Reached A Price Of: {last_price_update[i]:.2f}. You Should Consider Buying!"
                     buynotif.icon = "assets/buy.ico"

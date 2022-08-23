@@ -12,10 +12,15 @@ def install():
         "pyfiglet",
         "neuralintents",
         "matplotlib",
-        "mplfinance"
-        "requests"
-        "pyttsx3"
-        "pyjokes"
+        "mplfinance",
+        "requests",
+        "pyttsx3",
+        "pyjokes",
+        "nltk",
+        "wikipedia",
+        "phue",
+        "googletrans",
+        "requests-html"
     ])
     
     # this thing
