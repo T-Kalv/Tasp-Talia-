@@ -13,6 +13,12 @@
     "responses": ["You're welcome!", "No problem!", "My pleasure!", "Anytime!", "My pleasure!", "Anytime!"]
 },
 
+
+    {"tag": "help", 
+    "patterns": ["help", "help me", "i need help", "stuck", "what do i do"],
+    "responses": ["Here are some command that you can ask me"]
+},
+
     {"tag": "name", 
     "patterns": ["what is your name", "what's your name", "who are you", "what do I call you", "what should I call you"],
     "responses": ["My name is TALIA", "I'm TALIA", "I'm called TALIA"]
@@ -83,6 +89,13 @@
 
     {"tag": "news", 
     "patterns": ["news", "latest news", "breaking news", "current news"],
+    "responses": ["Shwoing news..."]
+
+
+},
+
+    {"tag": "covid", 
+    "patterns": ["covid", "covid-19", "corona", "coronavirus"],
     "responses": ["Shwoing news..."]
 
 
