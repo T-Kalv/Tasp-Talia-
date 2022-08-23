@@ -345,9 +345,7 @@ def TALIA_main():
             else:
                 print("Sorry I don't understand 😥")
                 engine.say("Sorry I don't understand")
-                engine.runAndWait()
-            
-            
+                engine.runAndWait()    
 
         def save_portfolio():
             with open('data/portfolio.pkl', 'wb') as f:

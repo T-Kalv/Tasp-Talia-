@@ -16,6 +16,16 @@ def install():
         "requests"
         "pyttsx3"
         "pyjokes"
+        "urllib.request"
+        "re"
+        "webbrowser"
+        "phue"
+        "googletrans"
+        "pprint"
+        "bs4"
+        "requests_html"
+        "requests"
+        "wikipedia"
     ])
     
     # this thing
