@@ -13,10 +13,14 @@
     "responses": ["You're welcome!", "No problem!", "My pleasure!", "Anytime!", "My pleasure!", "Anytime!"]
 },
 
-
     {"tag": "help", 
     "patterns": ["help", "help me", "i need help", "stuck", "what do i do"],
     "responses": ["Here are some command that you can ask me"]
+},
+
+    {"tag": "clear", 
+    "patterns": ["clear", "clear screen", "reset", "cls", "restart"],
+    "responses": ["Clear..."]
 },
 
     {"tag": "name", 

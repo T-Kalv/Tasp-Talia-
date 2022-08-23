@@ -289,7 +289,7 @@ def TALIA_main():
             time.sleep(2)
             engine.say("The Data Used Is From: https://www.worldometers.info/coronavirus/")
             engine.say("For More Information On Covid-19, Please Visit: https://www.nhs.uk/conditions/coronavirus-covid-19/")
-            print("For More Information On Covid-19, Please Visit: https://www.nhs.uk/conditions/coronavirus-covid-19/")
+            print("The Data Used Is From: https://www.worldometers.info/coronavirus/")
             print("For More Information On Covid-19, Please Visit: https://www.nhs.uk/conditions/coronavirus-covid-19/")
             engine.runAndWait()
 
@@ -297,8 +297,56 @@ def TALIA_main():
             print("Here are some commands you can ask me 😃: ")
             engine.say("Here are some commands you can ask me ")
             engine.runAndWait()
-            commands = ["time", "date", "weather", "joke", "wiki", "app", "youtube", "lights", "translate", "news", "covid", "plot chart", "add stock", "remove stock", "portfolio value", "stock value"]
+            commands = ["time", "date", "weather", "clear", "joke", "wiki", "app", "youtube", "lights", "translate", "news", "covid", "plot chart", "add stock", "remove stock", "portfolio value", "stock value"]
             print('\n'.join(commands))
+            engine.say('\n'.join(commands))
+            engine.runAndWait()
+
+        def clear():
+            response = input("Would you like to clear the termial/cli 🥺 [Y/n]?")
+            if response in ['y', 'Y']:
+                os.system('cls')
+                welcome = pyfiglet.figlet_format("Welcome To T.A.L.I.A Messenger!")
+                print(welcome)
+                print(r"""
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@%**========+*#%@@@@@@@@@@@@
+@@@@@@@@@@*+=++*********+*+==*%@@@@@@@@@
+@@@@@@@%*=+++++##%%%%%%%#+++++++#@@@@@@@
+@@@@@@*=+*=+%@@@@@@@@@@@@@@@#=**==@@@@@@
+@@@@@+=**=%@@@@@@@@#=@@@@@@@@@==%++@@@@@
+@@@@#=*+=%@@@@@@..======@@@@@@@+=*==@@@@
+@@@@==*=*@@@@@@@.@@@@@@@@@@@@@@@==*=#@@@
+@@@@==#=#@@@@@@@.+######@@@@@@@@==#=#@@@
+@@@@==#=#@@@@@@@#######-+@@@@@@@==#=#@@@
+@@@@==#=#@@@@@@@@@@@@@@++@@@@@@@==#=#@@@
+@@@@*=*==@@@@@@@=======:*@@@@@@*=*++@@@@
+@@@@@+=*++@@@@@@@@@#=@@@@@@@@@*+**+%@@@@
+@@@@@%*+**+*%@@@@@@@@@@@@@@@%+***+%@@@@@
+@@@@@@@%++**++*%@@@@@@@@%*+++*++*@@@@@@@
+@@@@@@@@@#++****+++++++++****+*@@@@@@@@@
+@@@@@@@@@@@@%*++********++**%@@@@@@@@@@@
+@@@@@@@@@@@@@@@@%%%%%%%%@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+""")
+                print("-----------------------------------------------------")
+                print("\n")
+                now = datetime.datetime.now()
+                print(now)
+                print("\n")
+                engine.say("Hi, How Can I Help?")
+                print("Hi, How Can I Help? 💬")
+                engine.runAndWait()
+            elif response in ['n', 'N']:
+                print("Ok 😌")
+                engine.say("Ok")
+                engine.runAndWait()
+            else:
+                print("Sorry I don't understand 😥")
+                engine.say("Sorry I don't understand")
+                engine.runAndWait()
+            
             
 
         def save_portfolio():
@@ -407,6 +455,7 @@ def TALIA_main():
             'translate': translate,
             'news': news,
             'covid': covid,
+            'clear': clear,
             'understand': understand,
             'chart_plot': chart_plot,
             'update_portfolio': update_portfolio,
