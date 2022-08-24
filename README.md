@@ -47,7 +47,7 @@ stock value
 ![image](https://user-images.githubusercontent.com/48865863/186487187-bed47d91-097e-4183-b4b4-5d837e5faaff.png)
 ### *Step 2: Unzip/extract the TASP Folder*
 ![image](https://user-images.githubusercontent.com/48865863/186488046-0bf65346-7466-4700-961d-06095c3d657c.png)
-### *Step 3: Open the extracted folder and navigate to scripts and open TASP.py*
+### *Step 3: Open the extracted folder and navigate to scripts and open the deps.py file to install the packages and then run TASP.py file*
 ![image](https://user-images.githubusercontent.com/48865863/186488493-fbbcec2d-addd-4133-8f41-b5aa6bb5da55.png)
 ### *Step 4: You can either run Talia or Tasp, pause and exit...*
 ![image](https://user-images.githubusercontent.com/48865863/186486691-fc6c5d26-4ca4-46ea-9619-b90971d39c33.png)
