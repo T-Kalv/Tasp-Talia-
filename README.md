@@ -10,7 +10,7 @@
 
 * 🌐TALIA (**Totally Artificial Language Intelligence Assistant**) is a virtual assistant.
 
-* ****Tasp & Talia Messenger are currently in a beta developer preview stage. 
+* ****Tasp & Talia are currently in a beta developer preview stage. 
 Current features are subject to change. Some features, applications and services may not be available in all regions or all languages or all platforms.*** 
 
 ## Getting Started 😇
