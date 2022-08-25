@@ -49,7 +49,7 @@ stock value
 ![image](https://user-images.githubusercontent.com/48865863/186488046-0bf65346-7466-4700-961d-06095c3d657c.png)
 ### *Step 3: Open the extracted folder and navigate to scripts and open the deps.py file to install the packages and then run TASP.py file*
 ![image](https://user-images.githubusercontent.com/48865863/186488493-fbbcec2d-addd-4133-8f41-b5aa6bb5da55.png)
-### *Step 4: You can either run Talia or Tasp, pause and exit...*
+### *Step 4: You can either run Talia or Tasp (in the background), pause and exit...*
 ![image](https://user-images.githubusercontent.com/48865863/186486691-fc6c5d26-4ca4-46ea-9619-b90971d39c33.png)
 
 ## About 📜
@@ -62,7 +62,7 @@ stock value
 ### What's 🌐Talia (Totally Artificial Language Intelligence Assistant)?
 ![image](https://user-images.githubusercontent.com/48865863/186493155-0e6b6bc0-f6c3-4c03-975c-c87504886694.png)
 * TALIA stands for Totally Artificial Language Intelligence Assistant. Talia* was included to allow AI like chat based functionality for the user in the form of a virtual assistant that **actually talks to you (in a British accent)**.
-* You can do a number of commands like ask the: weather, date, time, jokes, stocks, translate, wiki, youtube...
+* You can do a number of commands like ask the: weather, date, time, jokes, stocks, translate, wiki, youtube... In this case, I searched for elonmusk using the wiki command...
 ![image](https://user-images.githubusercontent.com/48865863/186493863-f902be40-0bee-4889-b2f8-4721a683c271.png)
 
 ## Why 🤔?
