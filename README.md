@@ -30,6 +30,7 @@ joke
 wiki
 app
 youtube
+song
 lights
 translate
 news
