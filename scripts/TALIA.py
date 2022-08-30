@@ -25,6 +25,8 @@ from pprint import pprint
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup as soup
 import requests
+from tqdm import tqdm
+import pyautogui
 
 engine = pyttsx3.init()
 engine.setProperty('rate', 220) 
@@ -63,7 +65,12 @@ def TALIA_main():
 """)
         print("-----------------------------------------------------")
         engine.say("Importing all preferences from home interface")
-        time.sleep(2)
+        
+        for i in tqdm (range (101), #Update progress bar
+               desc="Updating", 
+               ascii=False, ncols=75):
+            time.sleep(0.05)
+        
         engine.say("Systems are now fully operational")
         engine.runAndWait()
         print("\n")
@@ -155,6 +162,23 @@ def TALIA_main():
             engine.say("Here's what I found on YouTube...")
             print("https://www.youtube.com/watch?v="+video_ids[0])
             engine.runAndWait()
+
+        def play_song():#Plays song through spotify
+            import time
+            engine.say("What song would you like to play?")
+            song = input("What song would you like to play? 🎵 ")
+            engine.runAndWait()
+            os.system("spotify")
+            time.sleep(5)
+            pyautogui.hotkey('ctrl', 'l')
+            pyautogui.write(song, interval = 0.1)
+            for key in ['enter', 'pagedown', 'tab', 'enter', 'enter']:
+                time.sleep(2)
+                pyautogui.hotkey(key)
+            print("Playing "+song+" on Spotify...")
+            engine.say("Playing "+song+" on Spotify!")
+            engine.runAndWait()
+            
 
         def app():#NEED TO FIX!!!
             engine.say("What would you like to open?")
@@ -297,7 +321,7 @@ def TALIA_main():
             print("Here are some commands you can ask me 😃: ")
             engine.say("Here are some commands you can ask me ")
             engine.runAndWait()
-            commands = ["time", "date", "weather", "clear", "joke", "wiki", "app", "youtube", "lights", "translate", "news", "covid", "plot chart", "add stock", "remove stock", "portfolio value", "stock value"]
+            commands = ["time", "date", "weather", "clear", "joke", "wiki", "app", "youtube", "song", "lights", "translate", "news", "covid", "plot chart", "add stock", "remove stock", "portfolio value", "stock value"]
             print('\n'.join(commands))
             engine.say('\n'.join(commands))
             engine.runAndWait()
@@ -332,6 +356,10 @@ def TALIA_main():
 """)
                 print("-----------------------------------------------------")
                 print("\n")
+                for i in tqdm (range (101), #Update progress bar
+                        desc="Updating", 
+                        ascii=False, ncols=75):
+                    time.sleep(0.05)
                 now = datetime.datetime.now()
                 print(now)
                 print("\n")
@@ -448,6 +476,7 @@ def TALIA_main():
             'getweather': weather,
             'wiki': wiki,
             'youtube': youtube,
+            'play_song': play_song,
             'app': app,
             'philips_hue': philips_hue,
             'translate': translate,

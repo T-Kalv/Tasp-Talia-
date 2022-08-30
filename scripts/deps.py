@@ -21,6 +21,7 @@ def install():
         "phue",
         "googletrans",
         "requests-html"
+        "pyautogui"
     ])
     
     # this thing

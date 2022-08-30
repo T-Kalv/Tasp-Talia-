@@ -73,6 +73,12 @@
 
 },
 
+    {"tag": "play_song", 
+    "patterns": ["song", "play song", "spotify", "music", "play music", "play a song", "play some music"],
+    "responses": ["Playing song..."]
+
+},
+
     {"tag": "youtube", 
     "patterns": ["yt", "youtube", "you tube", "YouTube", "You Tube", "vid", "video"],
     "responses": ["Here's what I found on YouTube..."]

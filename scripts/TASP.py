@@ -73,7 +73,7 @@ def go():
                     time.sleep(1)
                 elif last_price_update[i] < stuff[i]["min"]:
                     #Notify user to buy stock
-                    huynotif.title = "Price Change For: " + stuff[i]["symbol"]
+                    buynotif.title = "Price Change For: " + stuff[i]["symbol"]
                     buynotif.message = stuff[i]["symbol"]+ f" Has Reached A Price Of: {last_price_update[i]:.2f}. You Should Consider Buying!"
                     buynotif.icon = "assets/buy.ico"
                     buynotif.send()
