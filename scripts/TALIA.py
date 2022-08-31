@@ -390,6 +390,11 @@ def TALIA_main():
                         desc="Updating", 
                         ascii=False, ncols=75):
                     time.sleep(0.05)
+                print(Fore.WHITE)
+                print('Status: '+ Fore.GREEN + 'ONLINE')
+                (Fore.WHITE)
+                print("\n")
+                time.sleep(2)
                 now = datetime.datetime.now()
                 print(now)
                 print("\n")
