@@ -27,6 +27,8 @@ from bs4 import BeautifulSoup as soup
 import requests
 from tqdm import tqdm
 import pyautogui
+import speedtest
+from colorama import Fore, Back, Style
 
 engine = pyttsx3.init()
 engine.setProperty('rate', 220) 
@@ -73,7 +75,9 @@ def TALIA_main():
         
         engine.say("Systems are now fully operational")
         engine.runAndWait()
-        print("\n")
+        print(Fore.WHITE)
+        print('Status: '+ Fore.GREEN + 'ONLINE')
+        print(Fore.WHITE)
         now = datetime.datetime.now()
         print(now)
         print("\n")
@@ -184,7 +188,8 @@ def TALIA_main():
             engine.say("What would you like to open?")
             response = input("What would you like to open? 🖥️ ")
             engine.say("Sorry Open Command is unavailable at the moment!")
-            print("Sorry Open Command is unavailable atm 😥!")
+            print(Fore.RED + 'Sorry Open Command is unavailable atm 😥!')
+            print(Fore.WHITE)
             #if "youtube" or "yt" or "YouTube" or "you tube" or "You Tube" in response:
             #    engine.say("Opening YouTube...")
             #    webbrowser.open("youtube.com")
@@ -316,6 +321,31 @@ def TALIA_main():
             print("The Data Used Is From: https://www.worldometers.info/coronavirus/")
             print("For More Information On Covid-19, Please Visit: https://www.nhs.uk/conditions/coronavirus-covid-19/")
             engine.runAndWait()
+
+        def speed_test():#Speed test
+            engine.say("Sped test currently offline")
+            print('Speed test currently' +Fore.WHITE+ 'OFFLINE')
+            print(Fore.WHITE)
+            enigine.runAndWait()
+        #    test = speedtest.Speedtest()
+        #    engine.say("Getting server list")
+        #    print("Getting server list...")
+        #    test.get_servers()#Gets current list of servers that can be tested
+        #    engine.say("Choosing best server")
+        #    print("Choosing best server to test...")
+        #    best = test.get_best_server()#Gets the best server to test
+        #    print(f"Found: {best['host']} loacted in {best['country']}")
+        #    print("Perfoming speed test...")
+        #    download_result = test.download()
+        #    upload_result = test.upload()
+        #   ping_result = test.results.ping_result
+        #    engine.say(f"Download speed: {download_result/1024/1024:.2f} Mbit/s")
+        #    engine.say(f"Upload speed: {upload_result/1024/1024:.2f} Mbit/s")
+        #    engine.say(f"Ping: {ping_result:.2f} ms")
+        #    print(f"Download speed: {download_result/1024/1024:.2f} Mbit/s")
+        #print(f"Upload speed: {upload_result/1024/1024:.2f} Mbit/s")
+        #    print(f"Ping: {ping_result:.2f} ms")
+        #   engine.runAndWait()
 
         def help():#Shows help commands to user
             print("Here are some commands you can ask me 😃: ")
@@ -482,6 +512,7 @@ def TALIA_main():
             'translate': translate,
             'news': news,
             'covid': covid,
+            'speed_test': speed_test,
             'clear': clear,
             'understand': understand,
             'chart_plot': chart_plot,

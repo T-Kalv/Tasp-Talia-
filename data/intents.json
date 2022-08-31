@@ -106,7 +106,14 @@
 
     {"tag": "covid", 
     "patterns": ["covid", "covid-19", "corona", "coronavirus"],
-    "responses": ["Shwoing news..."]
+    "responses": ["Showing news..."]
+
+
+},
+
+    {"tag": "speed_test", 
+    "patterns": ["speed test", "speedtest", "internet speed test", "broadband test", "broadband speed test"],
+    "responses": ["Speed test..."]
 
 
 },
