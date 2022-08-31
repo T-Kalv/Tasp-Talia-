@@ -72,7 +72,9 @@ def TALIA_main():
                desc="Updating", 
                ascii=False, ncols=75):
             time.sleep(0.05)
-        
+        print("\n")
+        print(Fore.CYAN +'Version: v2.0.0-beta-preview')
+        print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
         print(Fore.WHITE)
