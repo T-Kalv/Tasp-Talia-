@@ -61,7 +61,8 @@ stock value
 * TASP* is a stock price notifier bot that notifies the user when their desired stocks need to be sold and also need to be bought. It uses the yahoo finance api from the yahoo finace website (totally not sponsored *cough cough): https://finance.yahoo.com/ Also it's now built with TALIA.
 
 ### What's 🌐Talia (Totally Artificial Language Intelligence Assistant)?
-![image](https://user-images.githubusercontent.com/48865863/186493155-0e6b6bc0-f6c3-4c03-975c-c87504886694.png)
+![image](https://user-images.githubusercontent.com/48865863/187778065-95a53c5d-2ae8-4bf8-a9e1-4c98cbd4982f.png)
+
 * TALIA stands for Totally Artificial Language Intelligence Assistant. Talia* was included to allow AI like chat based functionality for the user in the form of a virtual assistant that **actually talks to you (in a British accent)**.
 * You can do a number of commands like ask the: weather, date, time, jokes, stocks, translate, wiki, youtube... In this case, I searched for elonmusk using the wiki command...
 ![image](https://user-images.githubusercontent.com/48865863/186493863-f902be40-0bee-4889-b2f8-4721a683c271.png)
