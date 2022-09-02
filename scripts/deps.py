@@ -20,9 +20,9 @@ def install():
         "wikipedia",
         "phue",
         "googletrans",
-        "requests-html"
-        "pyautogui"
-        "speedtest-cli"
+        "requests-html",
+        "pyautogui",
+        "speedtest-cli",
     ])
     
     # this thing
