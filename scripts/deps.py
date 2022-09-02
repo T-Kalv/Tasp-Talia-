@@ -22,7 +22,7 @@ def install():
         "googletrans",
         "requests-html",
         "pyautogui",
-        "speedtest-cli",
+        "speedtest-cli"
     ])
     
     # this thing
