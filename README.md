@@ -5,6 +5,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/T-KALV/T.A.S.P)
 ![GitHub commits since latest release (by date including pre-releases)](https://img.shields.io/github/commits-since/T-KALV/T.A.S.P/latest?include_prereleases&style=plastic)
 ![GitHub issues](https://img.shields.io/github/issues/T-KALV/T.A.S.P)
+![GitHub all releases](https://img.shields.io/github/downloads/T-Kalv/Tasp-Talia-/total)
 
 * 💲TASP (**Totally Auto Stock Pinger**) is a stock price notifier bot that notifies the user when their desired stocks need to be sold and bought.
 
