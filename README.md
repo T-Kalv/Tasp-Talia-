@@ -11,9 +11,9 @@
 
 * 🌐TALIA (**Totally Artificial Language Intelligence Assistant**) is a virtual assistant.
 
-* ****Tasp & Talia are currently in a beta developer preview stage. 
+* **Tasp & Talia are currently in a beta developer preview stage. 
 Current features are subject to change. Some features, applications and services may not be available in all regions or all languages or all platforms.
-Please note that Tasp is not financial advice and your financial actions are down to you as the user and not Tasp! *** 
+Please note that Tasp is not financial advice and your financial actions are down to you as the user and not Tasp!** 
 
 ## Getting Started 😇
 ![image](https://user-images.githubusercontent.com/48865863/186486691-fc6c5d26-4ca4-46ea-9619-b90971d39c33.png)
