@@ -35,6 +35,7 @@ youtube
 song
 lights
 translate
+wordle
 news
 covid
 plot chart
