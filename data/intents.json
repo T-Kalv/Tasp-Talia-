@@ -118,6 +118,13 @@
 
 },
 
+    {"tag": "wordle", 
+    "patterns": ["wordle", "wordle game"],
+    "responses": ["Playing Wordle..."]
+
+
+},
+
     {"tag": "chart_plot", 
     "patterns": ["plot chart", "chart plot", "plot stock", "stock chart"],
     "responses": ["Plotting Chart..."]

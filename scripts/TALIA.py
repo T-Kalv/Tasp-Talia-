@@ -29,6 +29,7 @@ from tqdm import tqdm
 import pyautogui
 import speedtest
 from colorama import Fore, Back, Style
+import random
 
 engine = pyttsx3.init()
 engine.setProperty('rate', 220) 
@@ -73,7 +74,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v2.0.0-beta-preview')
+        print(Fore.CYAN +'Version: v2.0.1-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -353,10 +354,67 @@ def TALIA_main():
             print("Here are some commands you can ask me 😃: ")
             engine.say("Here are some commands you can ask me ")
             engine.runAndWait()
-            commands = ["time", "date", "weather", "clear", "joke", "wiki", "app", "youtube", "song", "lights", "translate", "news", "covid", "plot chart", "add stock", "remove stock", "portfolio value", "stock value"]
+            commands = ["time", "date", "weather", "clear", "joke", "wiki", "app", "youtube", "song", "lights", "translate", "wordle", "news", "covid", "plot chart", "add stock", "remove stock", "portfolio value", "stock value"]
             print('\n'.join(commands))
             engine.say('\n'.join(commands))
             engine.runAndWait()
+
+        def wordle(theAnswer, theGuess):#NEED TO FIX THIS
+            #TypeError: TALIA_main.<locals>.wordle() missing 2 required positional arguments: 'theAnswer' and 'theGuess'
+            position = 0
+            hint = ""
+            for letter in theGuess:
+                if letter == theAnswer[position]:
+                    print(Fore.GREEN)
+                    hint += "G"
+                elif letter in theAnswer:
+                    print(Fore.YELLOW)
+                    hint += "Y"
+                else:
+                    print(Fore.GREY)
+                    hint += "#"
+                position +=1
+            print(hint)
+            return hint == "GGGGG"
+
+
+            wordle_list = []
+            wordle_file = open("wordle_words.txt")
+            for word in wordle_file:
+                wordle_list.append(word.strip())
+            answer = random.choice(wordle_list)
+            print(answer)
+            number_of_guess = 0
+            correct_guess = False
+            print(Fore.WHITE)
+            while number_of_guess < 6 and not correct_guess:
+                guess = input("Enter a 5 letter word: ")
+                print("You have guessed the word ",guess)
+                number_of_guess +=1
+                correct_guess = wordle(answer, guess)
+            if correct_guess:
+                print("Let's goooooooooooo! You correctly guessed the word in ", number_of_guess, "times!")
+            else:
+                print("Unfortunately, you have used up all of your guesses. The correct word to guess was ",answer)
+                        
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         def clear():
             response = input("Would you like to clear the termial/cli 🥺 [Y/n]?")
@@ -520,6 +578,7 @@ def TALIA_main():
             'news': news,
             'covid': covid,
             'speed_test': speed_test,
+            'wordle': wordle,
             'clear': clear,
             'understand': understand,
             'chart_plot': chart_plot,
