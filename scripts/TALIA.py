@@ -30,6 +30,7 @@ import pyautogui
 import speedtest
 from colorama import Fore, Back, Style
 import random
+import curses
 
 engine = pyttsx3.init()
 engine.setProperty('rate', 220) 
@@ -75,7 +76,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v2.0.1-public-beta-preview')
+        print(Fore.CYAN +'Version: v2.0.2-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -395,17 +396,27 @@ def TALIA_main():
             print(Fore.WHITE)
             while number_of_guess < 6 and not correct_guess:
                 guess = input("Enter a 5 letter word: ")
+                engine.say("Enter a 5 letter word")
                 print("\n")
                 number_of_guess +=1
                 correct_guess = checkwordle(answer, guess)
                 print("\n")
             if correct_guess:
-                engine.say("let's go! you correctly guessed the word in "+str(number_of_guess)+" tries")
+                engine.say("let's goooooooo! you correctly guessed the word in "+str(number_of_guess)+" tries")
                 print("Let's goooooooooooo! You correctly guessed the word in "+str(number_of_guess)+" tries!")
             else:
                 engine.say("Unfortunately, you have used up all of your guesses. The correct word to guess was "+answer)
                 print("Unfortunately, you have used up all of your guesses. The correct word to guess was "+answer)
             engine.runAndWait()
+
+
+        def snake():
+            print("Add snake cli code!")
+
+
+
+
+
 
 
         def clear():
@@ -569,6 +580,7 @@ def TALIA_main():
             'covid': covid,
             'speed_test': speed_test,
             'wordle': wordle,
+            'snake': snake,
             'clear': clear,
             'understand': understand,
             'chart_plot': chart_plot,

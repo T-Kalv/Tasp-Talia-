@@ -125,6 +125,13 @@
 
 },
 
+    {"tag": "snake", 
+    "patterns": ["snake", "snake game", "snak", "snak game"],
+    "responses": ["Playing Snake..."]
+
+
+},
+
     {"tag": "chart_plot", 
     "patterns": ["plot chart", "chart plot", "plot stock", "stock chart"],
     "responses": ["Plotting Chart..."]

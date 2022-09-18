@@ -24,6 +24,7 @@ def install():
         "requests-html",
         "pyautogui",
         "speedtest-cli"
+        "curses"
     ])
     
     # this thing
