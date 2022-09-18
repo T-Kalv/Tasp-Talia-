@@ -37,7 +37,8 @@ engine.setProperty('rate', 220)
 
 def TALIA_main():
     import time
-    os.chdir("..")
+    #For linux
+    #os.chdir("..")
     with open('data/portfolio.pkl', 'rb') as f:#Access the prebuilt portfolio containing APPL & TSLA
         portfolio = pickle.load(f)
         print('\033[1;37m')
@@ -604,4 +605,3 @@ def TALIA_main():
     def open_graph(data, mpf_style):
         mpf.plot(data, type='candle', style=mpf_style, volume=True)
 
-TALIA_main()
