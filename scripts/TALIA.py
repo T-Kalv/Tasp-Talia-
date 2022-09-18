@@ -266,7 +266,7 @@ def TALIA_main():
         def news():#NEED TO FIX!!!
             from requests_html import HTMLSession
             session = HTMLSession()
-            url = 'https://news.google.com/topstories?hl=en-GB&gl=GB&ceid=GB:en'#Shows news from Google News
+            url = 'https://news.google.com/topstories'#Shows news from Google News
             r = session.get(url)
             r.html.render(sleep=1, scrolldown=2)
             articles = r.html.find('article')
@@ -299,10 +299,9 @@ def TALIA_main():
 
             for a in country:
                 cou.append(a.text)
-            print("Please Enter Country Name With The First Letter As A Capital Letter 😷:")
-            import time
+            print("Please Enter Country Name 😷:")
             time.sleep(1)
-            c=input()
+            c=input().title()
             if c=="":
                 c="World"
             b=cou.index(c)
@@ -317,7 +316,6 @@ def TALIA_main():
                 2].text.strip() + "%)\t\t--Critical: " + active[1].text.strip() + " (" + per[3].text.strip() + "%)")
             print("Closed Cases: " + status[1].text.strip() + "\t\t--Discharged: " + active[2].text.strip() + " (" + per[
                 4].text.strip() + "%)\t--Deaths: " + active[3].text.strip() + " (" + per[5].text.strip() + "%)\n")
-            import time
             time.sleep(2)
             engine.say("The Data Used Is From: https://www.worldometers.info/coronavirus/")
             engine.say("For More Information On Covid-19, Please Visit: https://www.nhs.uk/conditions/coronavirus-covid-19/")
