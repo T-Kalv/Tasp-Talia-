@@ -36,6 +36,7 @@ engine.setProperty('rate', 220)
 
 def TALIA_main():
     import time
+    os.chdir("..")
     with open('data/portfolio.pkl', 'rb') as f:#Access the prebuilt portfolio containing APPL & TSLA
         portfolio = pickle.load(f)
         print('\033[1;37m')
@@ -357,23 +358,31 @@ def TALIA_main():
             engine.say('\n'.join(commands))
             engine.runAndWait()
 
-        def wordle(theAnswer, theGuess):#NEED TO FIX THIS
-            #TypeError: TALIA_main.<locals>.wordle() missing 2 required positional arguments: 'theAnswer' and 'theGuess'
-            position = 0
-            hint = ""
-            for letter in theGuess:
-                if letter == theAnswer[position]:
-                    print(Fore.GREEN)
-                    hint += "G"
-                elif letter in theAnswer:
-                    print(Fore.YELLOW)
-                    hint += "Y"
-                else:
-                    print(Fore.GREY)
-                    hint += "#"
-                position +=1
-            print(hint)
-            return hint == "GGGGG"
+        def wordle():
+
+            def checkwordle(theAnswer, theGuess):
+                position = 0
+                hint = ""
+                colours = []
+                for letter in theGuess:
+                    if letter == theAnswer[position]:
+                        hint += "G"
+                        colours.append(Fore.GREEN)
+                    elif letter in theAnswer:
+                        hint += "Y"
+                        colours.append(Fore.YELLOW)
+                    else:
+                        hint += "#"
+                        colours.append(Fore.WHITE)
+                    position +=1
+                print(
+                    colours[0]+theGuess[0]+Fore.RESET+
+                    colours[1]+theGuess[1]+Fore.RESET+
+                    colours[2]+theGuess[2]+Fore.RESET+
+                    colours[3]+theGuess[3]+Fore.RESET+
+                    colours[4]+theGuess[4]+Fore.RESET
+                    )
+                return hint == "GGGGG"
 
 
             wordle_list = []
@@ -381,37 +390,22 @@ def TALIA_main():
             for word in wordle_file:
                 wordle_list.append(word.strip())
             answer = random.choice(wordle_list)
-            print(answer)
             number_of_guess = 0
             correct_guess = False
             print(Fore.WHITE)
             while number_of_guess < 6 and not correct_guess:
                 guess = input("Enter a 5 letter word: ")
-                print("You have guessed the word ",guess)
+                print("\n")
                 number_of_guess +=1
-                correct_guess = wordle(answer, guess)
+                correct_guess = checkwordle(answer, guess)
+                print("\n")
             if correct_guess:
-                print("Let's goooooooooooo! You correctly guessed the word in ", number_of_guess, "times!")
+                engine.say("let's go! you correctly guessed the word in "+str(number_of_guess)+" tries")
+                print("Let's goooooooooooo! You correctly guessed the word in "+str(number_of_guess)+" tries!")
             else:
-                print("Unfortunately, you have used up all of your guesses. The correct word to guess was ",answer)
-                        
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
+                engine.say("Unfortunately, you have used up all of your guesses. The correct word to guess was "+answer)
+                print("Unfortunately, you have used up all of your guesses. The correct word to guess was "+answer)
+            engine.runAndWait()
 
 
         def clear():
@@ -599,3 +593,5 @@ def TALIA_main():
 
     def open_graph(data, mpf_style):
         mpf.plot(data, type='candle', style=mpf_style, volume=True)
+
+TALIA_main()

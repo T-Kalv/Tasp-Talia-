@@ -1,6 +1,7 @@
 import pip
 
 def install():
+    print("installing deps")
     pip.main([
         "install",
         # tells pip to install the below
