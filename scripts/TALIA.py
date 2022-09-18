@@ -116,7 +116,7 @@ def TALIA_main():
             print("T.A.L.I.A stands for: Totally Artificial Language Intelligence System 🙃")
             engine.runAndWait()
 
-        def time():#Shows current time to user
+        def gettime():#Shows current time to user
             now = datetime.datetime.now()
             engine.say("The Current Time Is")
             print("The Current Time Is ⏰...")
@@ -411,7 +411,10 @@ def TALIA_main():
         def clear():
             response = input("Would you like to clear the termial/cli 🥺 [Y/n]?")
             if response in ['y', 'Y']:
-                os.system('cls')
+                if os.name == "nt":
+                    os.system('cls')
+                else:
+                    os.system("clear")
                 welcome = pyfiglet.figlet_format("Welcome To T.A.L.I.A Messenger!")
                 print(welcome)
                 print(r"""
@@ -438,15 +441,10 @@ def TALIA_main():
 """)
                 print("-----------------------------------------------------")
                 print("\n")
-                for i in tqdm (range (101), #Update progress bar
-                        desc="Updating", 
-                        ascii=False, ncols=75):
-                    time.sleep(0.05)
                 print(Fore.WHITE)
                 print('Status: '+ Fore.GREEN + 'ONLINE')
-                (Fore.WHITE)
+                print(Fore.WHITE)
                 print("\n")
-                time.sleep(2)
                 now = datetime.datetime.now()
                 print(now)
                 print("\n")
@@ -557,7 +555,7 @@ def TALIA_main():
             'help': help,
             'name': name,
             'tasp': tasp,
-            'time': time,
+            'time': gettime,
             'date': date,
             'joke': joke,
             'getweather': weather,
