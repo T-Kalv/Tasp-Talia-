@@ -35,6 +35,14 @@
     "responses": ["T.A.L.I.A stands for: Totally Artificial Language Intelligence Assistant"]
 
 
+
+},
+
+    {"tag": "version", 
+    "patterns": ["version", "version number", "about", "build", "build number", "software", "security"],
+    "responses": ["Generating qrcode..."]
+
+
 },
 
     {"tag": "time", 
@@ -128,6 +136,20 @@
     {"tag": "snake", 
     "patterns": ["snake", "snake game", "snak", "snak game"],
     "responses": ["Playing Snake..."]
+
+
+},
+
+    {"tag": "games", 
+    "patterns": ["games", "game", "play game", "plsy games"],
+    "responses": ["Games..."]
+
+
+},
+
+    {"tag": "qrcode", 
+    "patterns": ["qrcode", "generate qrcode", "make qrcode", "show qrcode", "display qrcode"],
+    "responses": ["Generating qrcode..."]
 
 
 },

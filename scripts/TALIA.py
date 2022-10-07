@@ -31,6 +31,8 @@ import speedtest
 from colorama import Fore, Back, Style
 import random
 import curses
+import pyqrcode
+import platform
 
 engine = pyttsx3.init()
 engine.setProperty('rate', 220) 
@@ -77,7 +79,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v2.0.2-public-beta-preview')
+        print(Fore.CYAN +'Version: v2.0.3-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -330,7 +332,7 @@ def TALIA_main():
             engine.say("Sped test currently offline")
             print('Speed test currently' +Fore.WHITE+ 'OFFLINE')
             print(Fore.WHITE)
-            enigine.runAndWait()
+            engine.runAndWait()
         #    test = speedtest.Speedtest()
         #    engine.say("Getting server list")
         #    print("Getting server list...")
@@ -359,6 +361,27 @@ def TALIA_main():
             print('\n'.join(commands))
             engine.say('\n'.join(commands))
             engine.runAndWait()
+
+        def version():
+            print(Fore.CYAN)
+            print("About Talia")
+            print(Fore.WHITE)
+            text = pyqrcode.create('https://github.com/T-Kalv/Tasp-Talia-')
+            print(text.terminal(module_color='white', background='black'))
+            time.sleep(1)
+            my_system = platform.uname()
+            print()
+            print(f"OS: {my_system.system}")
+            print(f"Device Name: {my_system.node}")
+            print(f"Machine: {my_system.machine}")
+            print(f"Processor: {my_system.processor}\n")
+            print(Fore.YELLOW)
+            print("Software Version Number: v2.0.3-public-beta-preview")
+            print("Software Type: Public-Beta-Preview")
+            print(Fore.GREEN)
+            print("Last Update: 07/10/2022")
+            print(Fore.WHITE)
+            
 
         def wordle():
 
@@ -414,9 +437,23 @@ def TALIA_main():
         def snake():
             print("Add snake cli code!")
 
+        def games():
+            engine.say("Here are the games you can play")
+            print("Here are the games you can play:")
+            engine.say("wordle")
+            print("wordle")
+            engine.runAndWait()
 
 
-
+        def qrcode():
+            engine.say("Enter url or text to generate qr code")
+            print("Enter URL or text to generate QR CODE: ")
+            code = input()
+            time.sleep(1)
+            text = pyqrcode.create(code)
+            engine.say("Here is your generated qr code")
+            print(text.terminal(module_color='white', background='black'))
+            engine.runAndWait()
 
 
 
@@ -575,6 +612,7 @@ def TALIA_main():
             'youtube': youtube,
             'play_song': play_song,
             'app': app,
+            'version': version,
             'philips_hue': philips_hue,
             'translate': translate,
             'news': news,
@@ -582,6 +620,8 @@ def TALIA_main():
             'speed_test': speed_test,
             'wordle': wordle,
             'snake': snake,
+            'games': games,
+            'qrcode': qrcode,
             'clear': clear,
             'understand': understand,
             'chart_plot': chart_plot,
