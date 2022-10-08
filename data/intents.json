@@ -154,6 +154,13 @@
 
 },
 
+    {"tag": "periodic_table", 
+    "patterns": ["periodic table", "display periodic table", "show periodic table", "periodic table front and centre"],
+    "responses": ["Showing Periodic Table..."]
+
+
+},
+
     {"tag": "chart_plot", 
     "patterns": ["plot chart", "chart plot", "plot stock", "stock chart"],
     "responses": ["Plotting Chart..."]

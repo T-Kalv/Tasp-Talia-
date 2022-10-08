@@ -17,7 +17,7 @@ stuff = [
     }
 ]
 
-frequency = 60#how often TASP checks for stocks
+frequency = 120#how often TASP checks for stocks
 
 #Proper code below 
 try:
