@@ -34,6 +34,10 @@ import curses
 import pyqrcode
 import platform
 import csv, re
+import cv2
+from PIL import Image
+from playsound import playsound
+
 
 engine = pyttsx3.init()
 engine.setProperty('rate', 220) 
@@ -80,7 +84,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v2.0.4-public-beta-preview')
+        print(Fore.CYAN +'Version: v2.0.5-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -175,6 +179,12 @@ def TALIA_main():
             engine.say("Here's what I found on YouTube...")
             print("https://www.youtube.com/watch?v="+video_ids[0])
             engine.runAndWait()
+
+
+
+        def video():
+            import ASCII_VID
+
 
         def play_song():#Plays song through spotify
             import time
@@ -431,19 +441,6 @@ def TALIA_main():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         def version():
             print(Fore.CYAN)
             print("About Talia")
@@ -458,7 +455,7 @@ def TALIA_main():
             print(f"Machine: {my_system.machine}")
             print(f"Processor: {my_system.processor}\n")
             print(Fore.YELLOW)
-            print("Software Version Number: v2.0.4-public-beta-preview")
+            print("Software Version Number: v2.0.5-public-beta-preview")
             print("Software Type: Public-Beta-Preview")
             print(Fore.GREEN)
             print("Last Update: 08/10/2022")
@@ -692,6 +689,7 @@ def TALIA_main():
             'getweather': weather,
             'wiki': wiki,
             'youtube': youtube,
+            'video': video,
             'play_song': play_song,
             'app': app,
             'version': version,

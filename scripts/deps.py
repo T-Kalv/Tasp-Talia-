@@ -25,6 +25,13 @@ def install():
         "pyautogui",
         "speedtest-cli"
         "curses"
+        "pyqrcode"
+        "platform"
+        "csv"
+        "re"
+        "cv2"
+        "PIL"
+        "playsound"
     ])
     
     # this thing

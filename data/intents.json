@@ -88,10 +88,17 @@
 },
 
     {"tag": "youtube", 
-    "patterns": ["yt", "youtube", "you tube", "YouTube", "You Tube", "vid", "video"],
+    "patterns": ["yt", "youtube", "you tube", "YouTube", "You Tube"],
     "responses": ["Here's what I found on YouTube..."]
 
 },
+
+    {"tag": "video", 
+    "patterns": ["vid", "video", "play vid", "play video"],
+    "responses": ["Playing video..."]
+
+},
+
 
     {"tag": "philips_hue", 
     "patterns": ["light", "lights", "philips hue", "philips"],
