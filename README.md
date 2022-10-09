@@ -33,8 +33,10 @@ wiki
 app
 youtube
 song
+video
 lights
 translate
+periodic table
 wordle
 news
 covid

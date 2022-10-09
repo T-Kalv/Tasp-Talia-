@@ -84,7 +84,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v2.0.5-public-beta-preview')
+        print(Fore.CYAN +'Version: v2.0.6-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -368,7 +368,7 @@ def TALIA_main():
             print("Here are some commands you can ask me 😃: ")
             engine.say("Here are some commands you can ask me ")
             engine.runAndWait()
-            commands = ["time", "date", "weather", "clear", "joke", "wiki", "app", "youtube", "song", "lights", "translate", "wordle", "news", "covid", "plot chart", "add stock", "remove stock", "portfolio value", "stock value"]
+            commands = ["time", "date", "weather", "about", "clear", "joke", "wiki", "app", "youtube", "song", "video", "lights", "translate", "wordle", "news", "covid", "periodic table",  "plot chart", "add stock", "remove stock", "portfolio value", "stock value"]
             print('\n'.join(commands))
             engine.say('\n'.join(commands))
             engine.runAndWait()
@@ -455,10 +455,10 @@ def TALIA_main():
             print(f"Machine: {my_system.machine}")
             print(f"Processor: {my_system.processor}\n")
             print(Fore.YELLOW)
-            print("Software Version Number: v2.0.5-public-beta-preview")
+            print("Software Version Number: v2.0.6-public-beta-preview")
             print("Software Type: Public-Beta-Preview")
             print(Fore.GREEN)
-            print("Last Update: 08/10/2022")
+            print("Last Update: 09/10/2022")
             print(Fore.WHITE)
             
 
