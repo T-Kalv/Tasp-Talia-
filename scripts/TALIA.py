@@ -13,6 +13,7 @@ import datetime
 import requests
 import pyjokes
 import pyttsx3
+import calendar
 import time
 import wikipedia
 import urllib.request
@@ -37,6 +38,7 @@ import csv, re
 import cv2
 from PIL import Image
 from playsound import playsound
+import calendar
 
 
 engine = pyttsx3.init()
@@ -84,7 +86,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v2.0.6-public-beta-preview')
+        print(Fore.CYAN +'Version: v2.0.7-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -140,6 +142,23 @@ def TALIA_main():
             engine.say(now)
             print(now)
             engine.runAndWait()
+
+        def calendar():#Displays the calendar to the user
+            import calendar
+            response = input("What would you like to see, the year or the month 📅? ")
+            if response in ["year", "the year"]:
+                yy = int(input("Enter Year: "))
+                print(calendar.calendar(yy))
+            elif response in ["month", "the month"]:
+                mm = int(input("Enter Month: "))
+                yy = int(input("Enter Year: "))
+                print("Here's Your Calendar Below 📅: ")
+                print(calendar.month(yy, mm))
+            else:
+                print("ERROR, TRY AGAIN!!!")
+
+
+
 
         def weather():#Shows the weather for the user by using https://www.wttr.in/
             engine.say("Which City Would You Like The Weather For?")
@@ -446,7 +465,7 @@ def TALIA_main():
             print("About Talia")
             print(Fore.WHITE)
             text = pyqrcode.create('https://github.com/T-Kalv/Tasp-Talia-')
-            print(text.terminal(module_color='white', background='black'))
+            print(text.terminal(module_color='black', background='white'))
             time.sleep(1)
             my_system = platform.uname()
             print()
@@ -455,10 +474,10 @@ def TALIA_main():
             print(f"Machine: {my_system.machine}")
             print(f"Processor: {my_system.processor}\n")
             print(Fore.YELLOW)
-            print("Software Version Number: v2.0.6-public-beta-preview")
+            print("Software Version Number: v2.0.7-public-beta-preview")
             print("Software Type: Public-Beta-Preview")
             print(Fore.GREEN)
-            print("Last Update: 09/10/2022")
+            print("Last Update: 14/10/2022")
             print(Fore.WHITE)
             
 
@@ -531,7 +550,7 @@ def TALIA_main():
             time.sleep(1)
             text = pyqrcode.create(code)
             engine.say("Here is your generated qr code")
-            print(text.terminal(module_color='white', background='black'))
+            print(text.terminal(module_color='black', background='white'))
             engine.runAndWait()
 
 
@@ -684,6 +703,7 @@ def TALIA_main():
             'name': name,
             'tasp': tasp,
             'time': gettime,
+            'calendar': calendar,
             'date': date,
             'joke': joke,
             'getweather': weather,

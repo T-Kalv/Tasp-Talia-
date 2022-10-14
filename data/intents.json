@@ -51,6 +51,12 @@
 
 },
 
+    {"tag": "calendar", 
+    "patterns": ["calendar", "show me my calendar", "show calendar", "show month", "display month", "show week", "display week", "show year", "display year"],
+    "responses": ["Showing Calendar..."]
+
+},
+
     {"tag": "date", 
     "patterns": ["what is the date", "what's the date today", "what is the date today", "what's the date", "date", "today's date"],
     "responses": ["The Time Is..."]

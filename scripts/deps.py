@@ -32,6 +32,7 @@ def install():
         "cv2"
         "PIL"
         "playsound"
+        "calendar"
     ])
     
     # this thing
