@@ -4,7 +4,9 @@ def install():
     print("installing deps")
     pip.main([
         "install",
-        # tells pip to install the below
+
+        # tells pip to install the packages below,
+        # MAKE SURE EACH ENTRY ENDS WITH A COMMA!!!
 
         "pandas-datareader",
         "pystray",
@@ -23,16 +25,13 @@ def install():
         "googletrans",
         "requests-html",
         "pyautogui",
-        "speedtest-cli"
-        "curses"
-        "pyqrcode"
-        "platform"
-        "csv"
-        "re"
-        "cv2"
-        "PIL"
-        "playsound"
-        "calendar"
+        "pyqrcode",
+        "opencv-python",
+        "playsound",
+
+        # end of packages
+
+        "--exists-action","i"
     ])
     
     # this thing
