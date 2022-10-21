@@ -29,19 +29,27 @@
 
 },
 
-
-    {"tag": "tasp", 
-    "patterns": ["what does TALIA stand for", "what is TALIA", "what does TALIA mean", "who is TALIA"],
+    {"tag": "talia", 
+    "patterns": ["what does talia stand for", "what is talia", "what does talia mean", "who is talia"],
     "responses": ["T.A.L.I.A stands for: Totally Artificial Language Intelligence Assistant"]
 
+},
 
+    {"tag": "feeling", 
+    "patterns": ["how are you", "how are you doing", "how you do", "how's your day been", "how you doing"],
+    "responses": ["I'm doing great"]
+
+},
+
+    {"tag": "language", 
+    "patterns": ["what language do you speak", "what languages do you speak", "can you only speak english", "do you speak english", "which languages can you speak", "which language can you speak"],
+    "responses": ["I can only speak english..."]
 
 },
 
     {"tag": "version", 
     "patterns": ["version", "version number", "about", "build", "build number", "software", "security"],
     "responses": ["Generating qrcode..."]
-
 
 },
 
