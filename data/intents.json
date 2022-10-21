@@ -37,7 +37,7 @@
 
     {"tag": "feeling", 
     "patterns": ["how are you", "how are you doing", "how you do", "how's your day been", "how you doing"],
-    "responses": ["I'm doing great"]
+    "responses": ["I'm doing great..."]
 
 },
 

@@ -135,7 +135,7 @@ def TALIA_main():
 
         def language():
             engine.say("I can only speak and understand English right now but I'm willing to learn other languages so I can assist more people")
-            print("I can only speak and understand English right now")
+            print("I can only speak and understand English right now!")
             print("but I'm willing to learn other languages so I can assist more people 🧠")
             engine.runAndWait()
 
