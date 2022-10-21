@@ -123,8 +123,8 @@ def TALIA_main():
             engine.runAndWait()
 
         def talia():
-            engine.say("TALIA stands for: Totally Artificial Language Intelligence System")
-            print("TALIA stands for: Totally Artificial Language Intelligence System 🙃")
+            engine.say("TALIA stands for: Totally Artificial Language Intelligence Assistant")
+            print("TALIA stands for: Totally Artificial Language Intelligence Assistant 🙃")
             engine.runAndWait()
 
         def feeling():
