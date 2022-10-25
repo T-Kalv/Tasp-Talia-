@@ -41,6 +41,11 @@ from playsound import playsound
 import calendar
 
 
+# info
+version_name = "v2.0.9-public-beta-preview"
+last_update = "25/10/22"
+
+
 engine = pyttsx3.init()
 engine.setProperty('rate', 220) 
 
@@ -86,7 +91,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v2.0.8-public-beta-preview')
+        print(Fore.CYAN +'Version: v2.0.9-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -122,21 +127,9 @@ def TALIA_main():
             print("I'm TALIA 😇")
             engine.runAndWait()
 
-        def talia():
-            engine.say("TALIA stands for: Totally Artificial Language Intelligence Assistant")
-            print("TALIA stands for: Totally Artificial Language Intelligence Assistant 🙃")
-            engine.runAndWait()
-
-        def feeling():
-            engine.say("I'm doing great thanks for asking")
-            print("I'm Doing Great!")
-            print("Thanks For Asking 😇 ")
-            engine.runAndWait()
-
-        def language():
-            engine.say("I can only speak and understand English right now but I'm willing to learn other languages so I can assist more people")
-            print("I can only speak and understand English right now!")
-            print("but I'm willing to learn other languages so I can assist more people 🧠")
+        def tasp():
+            engine.say("T.A.L.I.A stands for: Totally Artificial Language Intelligence System")
+            print("T.A.L.I.A stands for: Totally Artificial Language Intelligence System 🙃")
             engine.runAndWait()
 
         def gettime():#Shows current time to user
@@ -371,7 +364,7 @@ def TALIA_main():
             engine.runAndWait()
 
         def speed_test():#Speed test
-            engine.say("Speed test currently offline")
+            engine.say("Sped test currently offline")
             print('Speed test currently' +Fore.WHITE+ 'OFFLINE')
             print(Fore.WHITE)
             engine.runAndWait()
@@ -486,10 +479,10 @@ def TALIA_main():
             print(f"Machine: {my_system.machine}")
             print(f"Processor: {my_system.processor}\n")
             print(Fore.YELLOW)
-            print("Software Version Number: v2.0.8-public-beta-preview")
+            print("Software Version Number: "+ version_name)
             print("Software Type: Public-Beta-Preview")
             print(Fore.GREEN)
-            print("Last Update: 21/10/2022")
+            print("Last Update: "+last_update)
             print(Fore.WHITE)
             
 
@@ -574,30 +567,6 @@ def TALIA_main():
                     os.system('cls')
                 else:
                     os.system("clear")
-                welcome = pyfiglet.figlet_format("Welcome To T.A.L.I.A Messenger!")
-                print(welcome)
-                print(r"""
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@%**========+*#%@@@@@@@@@@@@
-@@@@@@@@@@*+=++*********+*+==*%@@@@@@@@@
-@@@@@@@%*=+++++##%%%%%%%#+++++++#@@@@@@@
-@@@@@@*=+*=+%@@@@@@@@@@@@@@@#=**==@@@@@@
-@@@@@+=**=%@@@@@@@@#=@@@@@@@@@==%++@@@@@
-@@@@#=*+=%@@@@@@..======@@@@@@@+=*==@@@@
-@@@@==*=*@@@@@@@.@@@@@@@@@@@@@@@==*=#@@@
-@@@@==#=#@@@@@@@.+######@@@@@@@@==#=#@@@
-@@@@==#=#@@@@@@@#######-+@@@@@@@==#=#@@@
-@@@@==#=#@@@@@@@@@@@@@@++@@@@@@@==#=#@@@
-@@@@*=*==@@@@@@@=======:*@@@@@@*=*++@@@@
-@@@@@+=*++@@@@@@@@@#=@@@@@@@@@*+**+%@@@@
-@@@@@%*+**+*%@@@@@@@@@@@@@@@%+***+%@@@@@
-@@@@@@@%++**++*%@@@@@@@@%*+++*++*@@@@@@@
-@@@@@@@@@#++****+++++++++****+*@@@@@@@@@
-@@@@@@@@@@@@%*++********++**%@@@@@@@@@@@
-@@@@@@@@@@@@@@@@%%%%%%%%@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-""")
                 print("-----------------------------------------------------")
                 print("\n")
                 print(Fore.WHITE)
@@ -713,9 +682,7 @@ def TALIA_main():
             'thanks': thanks,
             'help': help,
             'name': name,
-            'talia': talia,
-            'feeling': feeling,
-            'language': language,
+            'tasp': tasp,
             'time': gettime,
             'calendar': calendar,
             'date': date,
