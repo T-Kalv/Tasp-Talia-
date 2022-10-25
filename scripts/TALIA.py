@@ -371,7 +371,7 @@ def TALIA_main():
             engine.runAndWait()
 
         def speed_test():#Speed test
-            engine.say("Sped test currently offline")
+            engine.say("Speed test currently offline")
             print('Speed test currently' +Fore.WHITE+ 'OFFLINE')
             print(Fore.WHITE)
             engine.runAndWait()
