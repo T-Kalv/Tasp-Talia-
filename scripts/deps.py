@@ -28,7 +28,7 @@ def install():
         "pyqrcode",
         "opencv-python",
         "playsound",
-        "speedtest-cli"
+        "speedtest-cli",
 
         # end of packages
 
