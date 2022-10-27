@@ -43,7 +43,7 @@ import calendar
 
 # info
 version_name = "v2.0.9-public-beta-preview"
-last_update = "25/10/22"
+last_update = "27/10/22"
 
 
 engine = pyttsx3.init()
@@ -131,6 +131,24 @@ def TALIA_main():
             engine.say("T.A.L.I.A stands for: Totally Artificial Language Intelligence System")
             print("T.A.L.I.A stands for: Totally Artificial Language Intelligence System 🙃")
             engine.runAndWait()
+
+        def talia():
+            engine.say("TALIA stands for: Totally Artificial Language Intelligence System")
+            print("TALIA stands for: Totally Artificial Language Intelligence System 🙃")
+            engine.runAndWait()
+
+        def feeling():
+            engine.say("I'm doing great thanks for asking")
+            print("I'm Doing Great!")
+            print("Thanks For Asking 😇 ")
+            engine.runAndWait()
+
+        def language():
+            engine.say("I can only speak and understand English right now but I'm willing to learn other languages so I can assist more people")
+            print("I can only speak and understand English right now")
+            print("but I'm willing to learn other languages so I can assist more people 🧠")
+            engine.runAndWait()
+
 
         def gettime():#Shows current time to user
             now = datetime.datetime.now()
@@ -392,7 +410,7 @@ def TALIA_main():
             print("Here are some commands you can ask me 😃: ")
             engine.say("Here are some commands you can ask me ")
             engine.runAndWait()
-            commands = ["time", "date", "weather", "about", "clear", "joke", "wiki", "app", "youtube", "song", "video", "lights", "translate", "wordle", "news", "covid", "periodic table",  "plot chart", "add stock", "remove stock", "portfolio value", "stock value"]
+            commands = ["time", "date", "calendar", "weather", "about", "clear", "joke", "wiki", "app", "qrcode", "youtube", "video", "song", "video", "lights", "translate", "wordle", "news", "covid", "periodic table",  "plot chart", "add stock", "remove stock", "portfolio value", "stock value"]
             print('\n'.join(commands))
             engine.say('\n'.join(commands))
             engine.runAndWait()
@@ -682,6 +700,10 @@ def TALIA_main():
             'thanks': thanks,
             'help': help,
             'name': name,
+            'tasp': tasp,
+            'talia': talia,
+            'feeling': feeling,
+            'language': language,
             'tasp': tasp,
             'time': gettime,
             'calendar': calendar,

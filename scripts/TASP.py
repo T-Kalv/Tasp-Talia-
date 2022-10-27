@@ -17,7 +17,7 @@ stuff = [
     }
 ]
 
-frequency = 120#how often TASP checks for stocks
+frequency = 300#how often TASP checks for stocks, here it's every 5 mins by default
 
 #Proper code below 
 try:
@@ -107,8 +107,8 @@ icon = pystray.Icon("TASP", image, menu=pystray.Menu(#Allows user to run the pro
     pystray.MenuItem("Exit", on_clicked)#Exit 
 ))
 notif = Notify()
-notif.title = "TASP is running"
-notif.message = "Use the System Tray icon to pause or access TALIA!"
+notif.title = "Tasp is running!"
+notif.message = "Use the System Tray icon to pause or access Talia!"
 notif.icon = "assets/traybaricon.ico"
 notif.send()
 
