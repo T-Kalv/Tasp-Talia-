@@ -49,6 +49,8 @@ stock value
 * You can use these commands or even ***similar relating commands*** in Talia as **Talia** is trained using pre-trained models to understand similar commands like YouTube can be understood from yt, youtube, you tube, YouTube, You Tube, vid, video...
 
 ## Installation 🖥️
+### *Step 0: Make sure that you have Python already installed!*
+### *https://www.python.org/downloads/*
 ### *Step 1: Download TASP from GitHub*
 ![image](https://user-images.githubusercontent.com/48865863/186487187-bed47d91-097e-4183-b4b4-5d837e5faaff.png)
 ### *Step 2: Unzip/extract the TASP Folder*
