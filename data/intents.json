@@ -182,6 +182,13 @@
 
 },
 
+    {"tag": "code", 
+    "patterns": ["show me code", "code me", "code", "program", "program me", "can you code", "can you program"],
+    "responses": ["What would you like the code for?"]
+
+
+},
+
     {"tag": "chart_plot", 
     "patterns": ["plot chart", "chart plot", "plot stock", "stock chart"],
     "responses": ["Plotting Chart..."]

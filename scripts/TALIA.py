@@ -42,8 +42,8 @@ import calendar
 
 
 # info
-version_name = "v2.0.9-public-beta-preview"
-last_update = "27/10/22"
+version_name = "v3.0.1-public-beta-preview"
+last_update = "16/12/22"
 
 
 engine = pyttsx3.init()
@@ -91,7 +91,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v2.0.9-public-beta-preview')
+        print(Fore.CYAN +'Version: v3.0.1-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -576,6 +576,37 @@ def TALIA_main():
             print(text.terminal(module_color='black', background='white'))
             engine.runAndWait()
 
+        def code():
+            engine.say("Which programming langauge would you like?")
+            response = input("Which programming language would you like? ")
+            if response in ["C#", "c#"]:
+                engine.say("What would you like the code for?")
+                code = input("What would you like the code for? ")
+                if code in ["hello world", "Hello World"]:
+                    test = open("scripts\C#_code\hello_world.txt","r+")
+                    print(test.read())
+                    test.close()
+            elif response in ["python", "Python"]:
+                engine.say("What would you like the code for?")
+                code = input("What would you like the code for? ")
+                if code in ["hello world", "Hello World"]:
+                    test = open("scripts\Python_code\hello_world.txt","r+")
+                    print(test.read())
+                    test.close()
+                else:
+                    engine.say("Sorry I can't provide code for that right now!")
+                    print("Sorry I can't provide code for that right now!")
+            else:
+                engine.say("Unfortunaly, I don't support that programming language right now. Please try a different programming langauge instead!")
+                print("Unfortunaly, I don't support that programming language right now. Please try a different programming langauge instead!")
+            engine.runAndWait()    
+            
+                
+
+
+
+
+
 
 
         def clear():
@@ -725,6 +756,7 @@ def TALIA_main():
             'snake': snake,
             'games': games,
             'qrcode': qrcode,
+            'code': code,
             'clear': clear,
             'understand': understand,
             'periodic_table': periodic_table,
