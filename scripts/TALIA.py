@@ -593,6 +593,41 @@ def TALIA_main():
                     test = open("scripts\Python_code\hello_world.txt","r+")
                     print(test.read())
                     test.close()
+            elif response in ["C", "c"]:
+                engine.say("What would you like the code for?")
+                code = input("What would you like the code for? ")
+                if code in ["hello world", "Hello World"]:
+                    test = open("scripts\C_code\hello_world.txt","r+")
+                    print(test.read())
+                    test.close()
+            elif response in ["C++", "c++"]:
+                engine.say("What would you like the code for?")
+                code = input("What would you like the code for? ")
+                if code in ["hello world", "Hello World"]:
+                    test = open("scripts\C++_code\hello_world.txt","r+")
+                    print(test.read())
+                    test.close()
+            elif response in ["HTML", "html"]:
+                engine.say("What would you like the code for?")
+                code = input("What would you like the code for? ")
+                if code in ["hello world", "Hello World"]:
+                    test = open("scripts\HTML_code\hello_world.txt","r+")
+                    print(test.read())
+                    test.close()
+            elif response in ["Java", "java"]:
+                engine.say("What would you like the code for?")
+                code = input("What would you like the code for? ")
+                if code in ["hello world", "Hello World"]:
+                    test = open("scripts\Java_code\hello_world.txt","r+")
+                    print(test.read())
+                    test.close()
+            elif response in ["typescript", "TypeScript"]:
+                engine.say("What would you like the code for?")
+                code = input("What would you like the code for? ")
+                if code in ["hello world", "Hello World"]:
+                    test = open("scripts\TypeScript_code\hello_world.txt","r+")
+                    print(test.read())
+                    test.close()
                 else:
                     engine.say("Sorry I can't provide code for that right now!")
                     print("Sorry I can't provide code for that right now!")
