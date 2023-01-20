@@ -42,8 +42,8 @@ import calendar
 
 
 # info
-version_name = "v3.0.1-public-beta-preview"
-last_update = "16/12/22"
+version_name = "v3.0.2-public-beta-preview"
+last_update = "20/01/23"
 
 
 engine = pyttsx3.init()
@@ -61,27 +61,37 @@ def TALIA_main():
         engine.say("Welcome To Talia Messenger!")
         import time
         time.sleep(2)
-        print(r"""
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@%**========+*#%@@@@@@@@@@@@
-@@@@@@@@@@*+=++*********+*+==*%@@@@@@@@@
-@@@@@@@%*=+++++##%%%%%%%#+++++++#@@@@@@@
-@@@@@@*=+*=+%@@@@@@@@@@@@@@@#=**==@@@@@@
-@@@@@+=**=%@@@@@@@@#=@@@@@@@@@==%++@@@@@
-@@@@#=*+=%@@@@@@..======@@@@@@@+=*==@@@@
-@@@@==*=*@@@@@@@.@@@@@@@@@@@@@@@==*=#@@@
-@@@@==#=#@@@@@@@.+######@@@@@@@@==#=#@@@
-@@@@==#=#@@@@@@@#######-+@@@@@@@==#=#@@@
-@@@@==#=#@@@@@@@@@@@@@@++@@@@@@@==#=#@@@
-@@@@*=*==@@@@@@@=======:*@@@@@@*=*++@@@@
-@@@@@+=*++@@@@@@@@@#=@@@@@@@@@*+**+%@@@@
-@@@@@%*+**+*%@@@@@@@@@@@@@@@%+***+%@@@@@
-@@@@@@@%++**++*%@@@@@@@@%*+++*++*@@@@@@@
-@@@@@@@@@#++****+++++++++****+*@@@@@@@@@
-@@@@@@@@@@@@%*++********++**%@@@@@@@@@@@
-@@@@@@@@@@@@@@@@%%%%%%%%@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        print(r"""                                                                                                                                                                                                      
+               .^~!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!~^.               
+              ^!77!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!77!^              
+             .!?7:                                                     :7?!.             
+             .!?7:                                                    :7?!.                          
+             .!?7:                                                    :7?!.             
+             .!?7:             ....                  ....             :7?!.             
+             .!?7:          .~J5PP5J~.            .~J5PP5J~.          :7?!.             
+             .!?7:          !5PPPPPPP7            7PPPPPPP5!          :7?!.             
+             .!?7:          7PPGPPGPP7            ?PGGPPGPP7          :7?!.             
+             .!?7:          .~J5PP5Y!:            :!Y5PP5J~.          :7?!.             
+             .!?7:            .:^^:.                .:^^:.            :7?!.             
+             .!?7:                                                    :7?!.             
+             .!?7:                  ^!!7!77!!!7!7!!^                  :7?!.             
+             .!?7:                  JGGGGGGGGGGGGGGJ                  :7?!.             
+             .!?7:                  ?PPPPPPPPPPPPPP?                  :7?!.             
+             .!?7:                  ^?PGPPPPPPPPGPJ~                  :7?!.             
+             .!?7:                   :!YPPGGGGPPY7:                   :7?!.             
+             .!?7:                     .^!7??7!^.                     :7?!.             
+             .!?7:                                                    :7?!.             
+             .7?7:                                                    :7?7.             
+             .!?7:                                                    :7?!.             
+              ^7?7!!!!!!!!!!!!!~^:              :!!!!!!!!!!!!!!!!!!!!!7?7^              
+               .^!!77777777777777?!^.          .~??777777777777777777!~^.               
+                               .:!?7~:        .~7?~.                                                
+                                 .~??^       .^7?!.                                                 
+                                 .!?7^     .^7?7~.                                                  
+                               .^!?7~. .:^!7?7~:                                                    
+                             :7?????77777?7!^.                                                      
+                             :!!!~~~~~~^:.                                                          
+ 
 """)
         print("-----------------------------------------------------")
         engine.say("Importing all preferences from home interface")
@@ -106,7 +116,7 @@ def TALIA_main():
         print("Hi, How Can I Help? 💬")
         engine.runAndWait()
 
-        def greeting():
+        def greeting():#Greets the user
             engine.say("Hi There!")
             print("Hi There! 👋")
             engine.runAndWait()
@@ -224,7 +234,7 @@ def TALIA_main():
 
 
 
-        def video():
+        def video():#Plays a video using ASCII style using ASCII_VID.py
             import ASCII_VID
 
 
@@ -416,7 +426,7 @@ def TALIA_main():
             engine.runAndWait()
 
 
-        def periodic_table():
+        def periodic_table():#Displays the period table in the termianl
             #period_table.csv source = https://physicallychemist.blogspot.com/2014/05/periodic-table-as-text.html
             periodicTableFile = open('periodic_table.csv', encoding='utf-8')#Opens the Periodic table csv file and reads it and closes it to access the data
             periodTableReader = csv.reader(periodicTableFile)
@@ -483,7 +493,7 @@ def TALIA_main():
 
 
 
-        def version():
+        def version():#Shows system/app info
             print(Fore.CYAN)
             print("About Talia")
             print(Fore.WHITE)
@@ -558,7 +568,7 @@ def TALIA_main():
         def snake():
             print("Add snake cli code!")
 
-        def games():
+        def games():#Displays available games that you can play
             engine.say("Here are the games you can play")
             print("Here are the games you can play:")
             engine.say("wordle")
@@ -566,7 +576,7 @@ def TALIA_main():
             engine.runAndWait()
 
 
-        def qrcode():
+        def qrcode():#Genetaye a qrcode from user input
             engine.say("Enter url or text to generate qr code")
             print("Enter URL or text to generate QR CODE: ")
             code = input()
@@ -576,7 +586,7 @@ def TALIA_main():
             print(text.terminal(module_color='black', background='white'))
             engine.runAndWait()
 
-        def code():
+        def code():#Shows the user code for a programming langauge (currenlt hello world in 7 languages)
             engine.say("Which programming langauge would you like?")
             response = input("Which programming language would you like? ")
             if response in ["C#", "c#"]:
@@ -644,7 +654,7 @@ def TALIA_main():
 
 
 
-        def clear():
+        def clear():#Clears the terminal to default view
             response = input("Would you like to clear the termial/cli 🥺 [Y/n]?")
             if response in ['y', 'Y']:
                 if os.name == "nt":
