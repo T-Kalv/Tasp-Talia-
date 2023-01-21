@@ -42,8 +42,8 @@ import calendar
 
 
 # info
-version_name = "v3.0.2-public-beta-preview"
-last_update = "20/01/23"
+version_name = "v3.0.3-public-beta-preview"
+last_update = "21/01/23"
 
 
 engine = pyttsx3.init()
