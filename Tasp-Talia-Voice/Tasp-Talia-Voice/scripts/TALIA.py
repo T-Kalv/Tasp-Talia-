@@ -1,4 +1,4 @@
-# TALIA aka Totally Artificial Language Intelligence Assistant
+# TALIA Voice aka Totally Artificial Language Intelligence Assistant Voice Edition
 import pyfiglet
 from neuralintents import GenericAssistant
 import matplotlib.pyplot as plt
@@ -39,10 +39,10 @@ import cv2
 from PIL import Image
 from playsound import playsound
 import calendar
-
+import speech_recognition
 
 # info
-version_name = "v3.0.3-public-beta-preview"
+version_name = "v3.0.4-public-beta-preview"
 last_update = "21/01/23"
 
 
@@ -56,44 +56,50 @@ def TALIA_main():
     with open('data/portfolio.pkl', 'rb') as f:#Access the prebuilt portfolio containing APPL & TSLA
         portfolio = pickle.load(f)
         print('\033[1;37m')
-        welcome = pyfiglet.figlet_format("Welcome To T.A.L.I.A Messenger!")
+        welcome = pyfiglet.figlet_format("Welcome To T.A.L.I.A Voice!")
         print(welcome)
-        engine.say("Welcome To Talia Messenger!")
+        engine.say("Welcome To Talia Voice!")
         import time
         time.sleep(2)
         print(r"""                                                                                                                                                                                                      
-               .^~!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!~^.               
-              ^!77!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!77!^              
-             .!?7:                                                     :7?!.             
-             .!?7:                                                    :7?!.                          
-             .!?7:                                                    :7?!.             
-             .!?7:             ....                  ....             :7?!.             
-             .!?7:          .~J5PP5J~.            .~J5PP5J~.          :7?!.             
-             .!?7:          !5PPPPPPP7            7PPPPPPP5!          :7?!.             
-             .!?7:          7PPGPPGPP7            ?PGGPPGPP7          :7?!.             
-             .!?7:          .~J5PP5Y!:            :!Y5PP5J~.          :7?!.             
-             .!?7:            .:^^:.                .:^^:.            :7?!.             
-             .!?7:                                                    :7?!.             
-             .!?7:                  ^!!7!77!!!7!7!!^                  :7?!.             
-             .!?7:                  JGGGGGGGGGGGGGGJ                  :7?!.             
-             .!?7:                  ?PPPPPPPPPPPPPP?                  :7?!.             
-             .!?7:                  ^?PGPPPPPPPPGPJ~                  :7?!.             
-             .!?7:                   :!YPPGGGGPPY7:                   :7?!.             
-             .!?7:                     .^!7??7!^.                     :7?!.             
-             .!?7:                                                    :7?!.             
-             .7?7:                                                    :7?7.             
-             .!?7:                                                    :7?!.             
-              ^7?7!!!!!!!!!!!!!~^:              :!!!!!!!!!!!!!!!!!!!!!7?7^              
-               .^!!77777777777777?!^.          .~??777777777777777777!~^.               
-                               .:!?7~:        .~7?~.                                                
-                                 .~??^       .^7?!.                                                 
-                                 .!?7^     .^7?7~.                                                  
-                               .^!?7~. .:^!7?7~:                                                    
-                             :7?????77777?7!^.                                                      
-                             :!!!~~~~~~^:.                                                          
+                                                                                                    
+                                  .......                  .......                                  
+                                .^!7???7!^.              .^!7???7!^.                                
+                                :7?7:.:7?7:              :7?7:.:7?7:                                
+                                :7?!   !?7:              :7?!   !?7:                                
+                                :7?!. .!?7:              :7?!. .!?7:                                
+                                :7?!. .!?7:              :7?!. .!?7:                                
+                     .::::::.   :7?!. .!?7:   .::::::.   :7?!. .!?7:   .::::::.                     
+                    ^!7????7!:  :7?!. .!?7:  ^!7????7!:  :7?!. .!?7:  ^!7????7!:                    
+                    ~??^..^??~  :7?!. .!?7:  ~?7YPPY7?~  :7?!. .!?7:  ~??^..^??~                    
+                    ~??^  ^??~  :7?!. .!?7:  ~?7YGGY7?~  :7?!. .!?7:  ~??^  ^??~                    
+                    ~??^  ^??~  :7?!. .!?7:  ~?7YPPY7?~  :7?!. .!?7:  ~??^  ^??~                    
+        :~77777~:   ~??^  ^??~  :7?!. .!?7:  ~?7YPPY7?~  :7?!. .!?7:  ~??^  ^??~   :~77777~:        
+       :7??JYJ??7:  ~??^  ^??~  :7?!. .!?7:  ~?7YPPY7?~  :7?!. .!?7:  ~??^  ^??~  :7??JYJ??7:       
+       :77?PGP?77:  ~??^  ^??~  :7?!. .!?7:  ~?7YGGY7?~  :7?!. .!?7:  ~??^  ^??~  :77?PGP?77:       
+       :77?PGP?77:  ~??^  ^??~  :7?!. .!?7:  ~?7YGGY7?~  :7?!. .!?7:  ~??^  ^??~  :77?PGP?77:       
+       :77?PGP?77:  ~??^  ^??~  :7?!. .!?7:  ~?7YGGY7?~  :7?!. .!?7:  ~??^  ^??~  :77?PGP?77:       
+       :7??PGP??7:  ~??^  ^??~  :7?!. .!?7:  ~?7YGGY7?~  :7?!. .!?7:  ~??^  ^??~  :7??PGP??7:       
+       :7??PGP??7:  ~??^  ^??~  :7?!. .!?7:  ~?7YGGY7?~  :7?!. .!?7:  ~??^  ^??~  :7??PGP??7:       
+       :7??YYY??7:  ~??^  ^??~  :7?!. .!?7:  ~?7YGGY7?~  :7?!. .!?7:  ~??^  ^??~  :7??YYY??7:       
+        :~77777~:   ~??^  ^??~  :7?!. .!?7:  ~?7YGGY7?~  :7?!. .!?7:  ~??^  ^??~   :~77777~:        
+                    ~??^  ^??~  :7?!. .!?7:  ~?7YGGY7?~  :7?!. .!?7:  ~??^  ^??~                    
+                    ~??^  ^??~  :7?7. .7?7:  ~??YGGY??~  :7?7. .7?7:  ~??^  ^??~                    
+                    ~??~..~??~  :7?!. .!?7:  ~??YPPY??~  :7?!. .!?7:  ~??~..~??~                    
+                    ^!7????7!^  :7?7. .7?7:  ^!7????7!^  :7?7. .7?7:  ^!7????7!^                    
+                     .::::::.   :7?7. .7?7:   .::::::.   :7?7. .7?7:   .::::::.                     
+                                :7?7. .7?7:              :7?7. .7?7:                                
+                                :??7. .7??:              :??7. .7??:                                
+                                :??7   7??:              :??7   7??:                                
+                                :??7:.:7??:              :??7:.:7??:                                
+                                .~7?????7~.              .~7?????7~.                                
+                                  .......                  .......                                  
+                                                                                                                                                              
  
 """)
         print("-----------------------------------------------------")
+        print("Please Make Sure Your Microphone Is On!")
+        engine.say("Please Make Sure Your Microphone Is On")
         engine.say("Importing all preferences from home interface")
         
         for i in tqdm (range (101), #Update progress bar
@@ -101,7 +107,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v3.0.1-public-beta-preview')
+        print(Fore.CYAN +'Version: v3.0.4-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -495,7 +501,7 @@ def TALIA_main():
 
         def version():#Shows system/app info
             print(Fore.CYAN)
-            print("About Talia")
+            print("About Talia Voice")
             print(Fore.WHITE)
             text = pyqrcode.create('https://github.com/T-Kalv/Tasp-Talia-')
             print(text.terminal(module_color='black', background='white'))
@@ -769,6 +775,9 @@ def TALIA_main():
             engine.say("Sorry I don't understand!")
             print("Sorry I don't understand! 😥")
             engine.runAndWait()
+
+        def open_graph(data, mpf_style):
+            mpf.plot(data, type='candle', style=mpf_style, volume=True)
         
         mappings = {
             'greeting': greeting,
@@ -819,10 +828,24 @@ def TALIA_main():
         #For re-training TALIA model below!
         #tasp.train_model()
         #tasp.save_model()
+        recognizer = speech_recognition.Recognizer()##Speech recognition so you can talk to Talia instead of typing
         while True:
-            text = input("")
-            tasp.request(text)
+            try:
 
-    def open_graph(data, mpf_style):
-        mpf.plot(data, type='candle', style=mpf_style, volume=True)
+                with speech_recognition.Microphone() as mic:
+                    recognizer.adjust_for_ambient_noise(mic)
+                    audio = recognizer.listen(mic)
+                    text = recognizer.recognize_google(audio)
+                    text = text.lower()
+
+                    print("You said: "+text)
+                    engine.runAndWait()
+                    tasp.request(text)
+                    engine.runAndWait()
+    
+            except speech_recognition.UnknownValueError:
+                recognizer = speech_recognition.Recognizer()
+                continue
+
+
 

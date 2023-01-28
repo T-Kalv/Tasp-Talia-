@@ -7,6 +7,7 @@ def install():
 
         # tells pip to install the packages below,
         # MAKE SURE EACH ENTRY ENDS WITH A COMMA!!!
+
         "windows-curses",
         "pandas-datareader",
         "pystray",

@@ -1,0 +1,240 @@
+{"intents": [
+    {"tag": "greeting", 
+    "patterns": ["hello", "hi", "greetings", "good morning", "good evening", "what's up", "yo", "hey"],
+    "responses": ["Hello!", "Hi!", "Good morning!", "Good evening!", "Hey!", "Yo!", "What's up..."]
+},
+    {"tag": "goodbye", 
+    "patterns": ["goodbye", "bye", "see you later", "cya", "have a good day", "brb"],
+    "responses": ["Bye!", "See you later!", "Have a good day!", "Bye bye!", "See you soon!", "I'll be right back!", "I'll be back soon!", "Talk to you later!"]
+
+},
+    {"tag": "thanks", 
+    "patterns": ["thanks", "thank you", "thank you so much", "thanks", "thx"],
+    "responses": ["You're welcome!", "No problem!", "My pleasure!", "Anytime!", "My pleasure!", "Anytime!"]
+},
+
+    {"tag": "help", 
+    "patterns": ["help", "help me", "i need help", "stuck", "what do i do"],
+    "responses": ["Here are some command that you can ask me"]
+},
+
+    {"tag": "clear", 
+    "patterns": ["clear", "clear screen", "reset", "cls", "restart"],
+    "responses": ["Clear..."]
+},
+
+    {"tag": "name", 
+    "patterns": ["what is your name", "what's your name", "who are you", "what do I call you", "what should I call you"],
+    "responses": ["My name is TALIA", "I'm TALIA", "I'm called TALIA"]
+
+},
+
+    {"tag": "talia", 
+    "patterns": ["what does talia stand for", "what is talia", "what does talia mean", "who is talia"],
+    "responses": ["T.A.L.I.A stands for: Totally Artificial Language Intelligence Assistant"]
+
+},
+
+    {"tag": "feeling", 
+    "patterns": ["how are you", "how are you doing", "how you do", "how's your day been", "how you doing"],
+    "responses": ["I'm doing great..."]
+
+},
+
+    {"tag": "language", 
+    "patterns": ["what language do you speak", "what languages do you speak", "can you only speak english", "do you speak english", "which languages can you speak", "which language can you speak"],
+    "responses": ["I can only speak english..."]
+
+},
+
+    {"tag": "version", 
+    "patterns": ["version", "version number", "about", "build", "build number", "software", "security"],
+    "responses": ["Generating qrcode..."]
+
+},
+
+    {"tag": "time", 
+    "patterns": ["what is the time", "what's the time", "what is the time now", "what's the time", "what time is it", "time"],
+    "responses": ["The Time Is..."]
+
+},
+
+    {"tag": "calendar", 
+    "patterns": ["calendar", "show me my calendar", "show calendar", "show month", "display month", "show week", "display week", "show year", "display year"],
+    "responses": ["Showing Calendar..."]
+
+},
+
+    {"tag": "date", 
+    "patterns": ["what is the date", "what's the date today", "what is the date today", "what's the date", "date", "today's date"],
+    "responses": ["The Time Is..."]
+
+},
+
+    {"tag": "getweather", 
+    "patterns": ["what is the weather", "what's the weather", "what is the weather now", "weather forecase", "weather"],
+    "responses": ["The Weather Is..."]
+
+},
+
+    {"tag": "joke", 
+    "patterns": ["tell me a joke", "tell me a funny joke", "funny joke", "joke"],
+    "responses": ["Here's A Joke..."]
+
+},
+
+    {"tag": "wiki", 
+    "patterns": ["wiki", "wikipedia", "wiki search", "wikipedia search"],
+    "responses": ["According to Wikipedia..."]
+
+},
+
+    {"tag": "app", 
+    "patterns": ["open app", "open", "app", "application"],
+    "responses": ["Opening..."]
+
+},
+
+    {"tag": "play_song", 
+    "patterns": ["song", "play song", "spotify", "music", "play music", "play a song", "play some music"],
+    "responses": ["Playing song..."]
+
+},
+
+    {"tag": "youtube", 
+    "patterns": ["yt", "youtube", "you tube", "YouTube", "You Tube"],
+    "responses": ["Here's what I found on YouTube..."]
+
+},
+
+    {"tag": "video", 
+    "patterns": ["vid", "video", "play vid", "play video"],
+    "responses": ["Playing video..."]
+
+},
+
+
+    {"tag": "philips_hue", 
+    "patterns": ["light", "lights", "philips hue", "philips"],
+    "responses": ["Philips Hue command activating..."]
+
+},
+
+    {"tag": "translate", 
+    "patterns": ["translate", "translation"],
+    "responses": ["Translating response..."]
+
+},
+
+    {"tag": "news", 
+    "patterns": ["news", "latest news", "breaking news", "current news"],
+    "responses": ["Shwoing news..."]
+
+
+},
+
+    {"tag": "covid", 
+    "patterns": ["covid", "covid-19", "corona", "coronavirus"],
+    "responses": ["Showing news..."]
+
+
+},
+
+    {"tag": "speed_test", 
+    "patterns": ["speed test", "speedtest", "internet speed test", "broadband test", "broadband speed test"],
+    "responses": ["Speed test..."]
+
+
+},
+
+    {"tag": "wordle", 
+    "patterns": ["wordle", "wordle game"],
+    "responses": ["Playing Wordle..."]
+
+
+},
+
+    {"tag": "snake", 
+    "patterns": ["snake", "snake game", "snak", "snak game"],
+    "responses": ["Playing Snake..."]
+
+
+},
+
+    {"tag": "games", 
+    "patterns": ["games", "game", "play game", "plsy games"],
+    "responses": ["Games..."]
+
+
+},
+
+    {"tag": "qrcode", 
+    "patterns": ["qrcode", "generate qrcode", "make qrcode", "show qrcode", "display qrcode"],
+    "responses": ["Generating qrcode..."]
+
+
+},
+
+    {"tag": "periodic_table", 
+    "patterns": ["periodic table", "display periodic table", "show periodic table", "periodic table front and centre"],
+    "responses": ["Showing Periodic Table..."]
+
+
+},
+
+    {"tag": "code", 
+    "patterns": ["show me code", "code me", "code", "program", "program me", "can you code", "can you program"],
+    "responses": ["What would you like the code for?"]
+
+
+},
+
+    {"tag": "chart_plot", 
+    "patterns": ["plot chart", "chart plot", "plot stock", "stock chart"],
+    "responses": ["Plotting Chart..."]
+
+
+},
+
+    {"tag": "update_portfolio", 
+    "patterns": ["new stock", "add stock", "add stock to portfolio", "add stock to list"],
+    "responses": ["Adding Stock To Portfolio..."]
+
+
+},
+
+    {"tag": "remove_portfolio", 
+    "patterns": ["remove stock", "remove stock from portfolio", "remove stock from list"],
+    "responses": ["Removing Stock From Portfolio..."]
+
+},
+
+    {"tag": "view_portfolio", 
+    "patterns": ["view portfolio", "show portfolio", "show stock"],
+    "responses": ["Showing portfolio"],
+    "context_set": ""
+
+
+},
+
+    {"tag": "portfolio_value", 
+    "patterns": ["what's my portfolio worth", "portfolio value"],
+    "responses": ["Portfolio Worth"],
+    "context_set": ""
+
+},
+
+    {"tag": "understand", 
+    "patterns": [""],
+    "responses": ["Sorry I don't understand"],
+    "context_set": ""
+
+},
+
+    {"tag": "portfolio_gains", 
+    "patterns": ["how is my portfolio doing", "stock value", "what are my gains"],
+    "responses": ["Plotting Chart..."],
+    "context_set": ""
+
+    }
+]}

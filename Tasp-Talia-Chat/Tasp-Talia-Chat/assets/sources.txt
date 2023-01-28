@@ -1,0 +1,3 @@
+Tasp_chat = https://icons8.com/icon/yg_1BRRCDTMO/topic
+sell.ico = https://icons8.com/icon/46081/low-price
+buy.ico = https://icons8.com/icon/44052/buying

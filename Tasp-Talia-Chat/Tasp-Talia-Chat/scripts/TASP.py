@@ -38,12 +38,12 @@ os.chdir("../")
 startnotif = Notify()
 startnotif.title = "TASP is currently running!"
 startnotif.message = "Use the System Tray icon to pause!"
-startnotif.icon = "assets/traybaricon.ico"
+startnotif.icon = "assets/Talia_chat.ico"
 
 endnotif = Notify()
 endnotif.title = "TASP has been paused"
 endnotif.message = "Use the System Tray icon to resume!"
-endnotif.icon = "assets/traybaricon.ico"
+endnotif.icon = "assets/Talia_chat.ico"
 
 # deal with these later on
 sellnotif = Notify()
@@ -99,7 +99,7 @@ def on_clicked(icon, item):
     elif str(item) == "Exit":
         icon.stop()
 
-image = PIL.Image.open("assets/traybaricon.ico")
+image = PIL.Image.open("assets/Talia_chat.ico")
 icon = pystray.Icon("TASP", image, menu=pystray.Menu(#Allows user to run the program in the taskbar tray
     pystray.MenuItem("Start", on_clicked),
     pystray.MenuItem("Stop", on_clicked),
@@ -107,9 +107,9 @@ icon = pystray.Icon("TASP", image, menu=pystray.Menu(#Allows user to run the pro
     pystray.MenuItem("Exit", on_clicked)#Exit 
 ))
 notif = Notify()
-notif.title = "Tasp is running!"
-notif.message = "Use the System Tray icon to pause or access Talia!"
-notif.icon = "assets/traybaricon.ico"
+notif.title = "Tasp-Talia is running!"
+notif.message = "Use the System Tray icon to pause Tasp or access Talia!"
+notif.icon = "assets/Talia_chat.ico"
 notif.send()
 
 
