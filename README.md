@@ -1,4 +1,5 @@
 # ![image](https://user-images.githubusercontent.com/48865863/186471247-8d5de3ab-fb7e-4c5b-abd2-9d0cdf243cab.png)
+## 💲T.A.S.P (Totally Auto Stock Pinger) Now Built With 🌐T.A.L.I.A (Totally Artificial Language Intelligence Assistant
 
 ![GitHub top language](https://img.shields.io/github/languages/top/T-KALV/T.A.S.P?style=plastic)
 ![GitHub repo size](https://img.shields.io/github/repo-size/T-KALV/T.A.S.P?style=plastic)
