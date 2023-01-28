@@ -42,8 +42,8 @@ import calendar
 
 
 # info
-version_name = "v3.0.4-public-beta-preview"
-last_update = "21/01/23"
+version_name = "v3.0.5-public-beta-preview"
+last_update = "28/01/23"
 
 
 engine = pyttsx3.init()
@@ -101,7 +101,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v3.0.4-public-beta-preview')
+        print(Fore.CYAN +'Version: v3.0.5-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
