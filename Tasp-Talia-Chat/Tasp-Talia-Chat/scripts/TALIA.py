@@ -495,13 +495,14 @@ def TALIA_main():
 
         def version():#Shows system/app info
             print(Fore.CYAN)
-            print("About Talia Chat")
+            print("About Talia Chat:")
             print(Fore.WHITE)
             text = pyqrcode.create('https://github.com/T-Kalv/Tasp-Talia-')
             print(text.terminal(module_color='black', background='white'))
             time.sleep(1)
             my_system = platform.uname()
             print()
+            print("Edition: Chat")
             print(f"OS: {my_system.system}")
             print(f"Device Name: {my_system.node}")
             print(f"Machine: {my_system.machine}")
