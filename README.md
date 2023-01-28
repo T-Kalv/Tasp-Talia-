@@ -8,6 +8,9 @@
 ![GitHub issues](https://img.shields.io/github/issues/T-KALV/T.A.S.P)
 ![GitHub all releases](https://img.shields.io/github/downloads/T-Kalv/Tasp-Talia-/total)
 
+![image](https://user-images.githubusercontent.com/48865863/215291270-c357372f-ecde-4915-9cf7-62e071d7ed7a.png)
+
+
 * 💲TASP (**Totally Auto Stock Pinger**) is a stock price notifier bot that notifies the user when their desired stocks need to be sold and bought.
 
 * 🌐TALIA (**Totally Artificial Language Intelligence Assistant**) is a virtual assistant.
