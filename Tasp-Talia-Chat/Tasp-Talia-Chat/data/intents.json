@@ -189,6 +189,13 @@
 
 },
 
+    {"tag": "world", 
+    "patterns": ["map", "earth", "world map", "display map", "display world map", "display earth", "show me map", "show me world map", "show me earth"],
+    "responses": ["Showing Map..."]
+
+
+},
+
     {"tag": "chart_plot", 
     "patterns": ["plot chart", "chart plot", "plot stock", "stock chart"],
     "responses": ["Plotting Chart..."]
