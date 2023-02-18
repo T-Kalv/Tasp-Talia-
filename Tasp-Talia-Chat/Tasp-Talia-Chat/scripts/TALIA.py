@@ -39,7 +39,7 @@ import cv2
 from PIL import Image
 from playsound import playsound
 import calendar
-
+import randfacts
 
 # info
 version_name = "v3.0.6-public-beta-preview"
@@ -787,7 +787,14 @@ def TALIA_main():
                 engine.say("Please enter a valid option")
                 engine.runAndWait()
 
-
+        def random_fact():
+            random_facts = randfacts.get_fact()
+            print("Here's a random fact for you: ")
+            engine.say("Here's a random fact for you")
+            print(random_facts)
+            print("*Disclaimer: The Facts Provided May Not Always True!")
+            engine.say(random_facts)
+            engine.runAndWait()
 
 
 
@@ -945,6 +952,7 @@ def TALIA_main():
             'clear': clear,
             'world': world,
             'unit_converter': unit_converter,
+            'random_fact': random_fact,
             'understand': understand,
             'periodic_table': periodic_table,
             'chart_plot': chart_plot,

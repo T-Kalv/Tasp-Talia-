@@ -216,6 +216,13 @@
 
 },
 
+    {"tag": "random_fact", 
+    "patterns": ["tell me a fact", "tell me a random fact", "random fact", "fact"],
+    "responses": ["Here's a random fact..."]
+
+
+},
+
     {"tag": "update_portfolio", 
     "patterns": ["new stock", "add stock", "add stock to portfolio", "add stock to list"],
     "responses": ["Adding Stock To Portfolio..."]

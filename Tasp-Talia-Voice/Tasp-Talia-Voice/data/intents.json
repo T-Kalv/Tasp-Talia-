@@ -208,6 +208,13 @@
 
 },
 
+    {"tag": "random_fact", 
+    "patterns": ["tell me a fact", "tell me a random fact", "random fact", "fact"],
+    "responses": ["Here's a random fact..."]
+
+
+},
+
     {"tag": "chart_plot", 
     "patterns": ["plot chart", "chart plot", "plot stock", "stock chart"],
     "responses": ["Plotting Chart..."]

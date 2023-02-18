@@ -30,6 +30,8 @@ def install():
         "opencv-python",
         "playsound",
         "speedtest-cli",
+        "SpeechRecognition",
+        "randfacts",
 
         # end of packages
 
