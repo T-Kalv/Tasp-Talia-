@@ -201,6 +201,13 @@
 
 },
 
+    {"tag": "unit_converter",
+    "patterns": ["units", "unit converter", "convert units", "conversion", "unit conversion"],
+    "responses": ["Converting units..."]
+
+
+},
+
     {"tag": "chart_plot", 
     "patterns": ["plot chart", "chart plot", "plot stock", "stock chart"],
     "responses": ["Plotting Chart..."]

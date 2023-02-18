@@ -715,6 +715,79 @@ def TALIA_main():
 """)
             engine.runAndWait()
 
+        def unit_converter():
+            print("Here are all the options available to convert: ")
+            engine.say("Here are all the options available to convert")
+            engine.runAndWait()
+            print(Fore.GREEN)
+            units = [(1, 'mi', 'km'),
+                     (2, 'km', 'mi'),
+                     (3, '°C', '°F'),
+                     (4, '°F', '°C'),
+                     (5, 'kg', 'lbs'),
+                     (6, 'lbs', 'kg')
+                    ]
+
+            for unit_number, from_unit, to_unit in units:
+                print(f'{unit_number}: {from_unit} --> {to_unit}')
+
+            print()
+            print(Fore.WHITE)
+            conversion = input("Which option would you like to convert: ")
+            engine.say("Which option would you like to convert")
+            engine.runAndWait()
+            try:
+                unit_index = int(conversion) - 1
+            except:
+                print("Enter a valid option!")
+                engine.say("Enter a valid option")
+                engine.runAndWait()
+
+            unit_number, from_unit, to_unit = units[unit_index]
+            from_value = float(input(f'Input: {from_unit} = '))
+
+            if unit_number == 1:#mi to km
+                engine.say("Converting mile to kilometre")
+                engine.runAndWait()
+                to_value = from_value*1.61
+                print(f'{from_value} {from_unit} --> {to_value} {to_unit}')
+
+            elif unit_number == 2:#km to mi
+                engine.say("Converting kilometre to mile")
+                engine.runAndWait()
+                to_value = from_value*0.62
+                print(f'{from_value} {from_unit} --> {to_value} {to_unit}')
+
+            elif unit_number == 3:# °F to °C
+                engine.say("Converting fahrenheit to celsius")
+                engine.runAndWait()
+                to_value = (from_value - 32)/1.8
+                print(f'{from_value} {from_unit} --> {to_value} {to_unit}')
+
+            elif unit_number == 4:# °C to °F
+                engine.say("Converting celsius to fahrenheit")
+                engine.runAndWait()
+                to_value = from_value*1.8+32
+                print(f'{from_value} {from_unit} --> {to_value} {to_unit}')
+
+            elif unit_number == 5:#kg to lbs
+                engine.say("Converting kilogram to pound")
+                engine.runAndWait()
+                to_value = from_value*0.45
+                print(f'{from_value} {from_unit} --> {to_value} {to_unit}')
+
+            elif unit_number == 6:#lbs to kg
+                engine.say("Converting pound to kilogram")
+                engine.runAndWait()
+                to_value = from_value*2.22
+                print(f'{from_value} {from_unit} --> {to_value} {to_unit}')
+
+            else:
+                print("Please enter a valid option!")
+                engine.say("Please enter a valid option")
+                engine.runAndWait()
+
+
 
 
 
@@ -871,6 +944,7 @@ def TALIA_main():
             'code': code,
             'clear': clear,
             'world': world,
+            'unit_converter': unit_converter,
             'understand': understand,
             'periodic_table': periodic_table,
             'chart_plot': chart_plot,
