@@ -113,6 +113,12 @@
 
 },
 
+    {"tag": "image", 
+    "patterns": ["image", "convert image to ascii", "ascii image", "ascii art", "ascii", "art", "convert image to art", "convert image"],
+    "responses": ["Converting image..."]
+
+},
+
 
     {"tag": "philips_hue", 
     "patterns": ["light", "lights", "philips hue", "philips"],

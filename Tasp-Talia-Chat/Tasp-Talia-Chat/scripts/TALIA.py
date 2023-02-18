@@ -42,8 +42,8 @@ import calendar
 
 
 # info
-version_name = "v3.0.5-public-beta-preview"
-last_update = "28/01/23"
+version_name = "v3.0.6-public-beta-preview"
+last_update = "18/02/23"
 
 
 engine = pyttsx3.init()
@@ -101,7 +101,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v3.0.5-public-beta-preview')
+        print(Fore.CYAN +'Version: v3.0.6-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -237,6 +237,44 @@ def TALIA_main():
         def video():#Plays a video using ASCII style using ASCII_VID.py
             import ASCII_VID
 
+        def image():
+            import PIL
+            from PIL import Image
+            Characters = ["@", "#", "S", "%", "?", "*", "+", ";", ":", ",", "."]
+
+            def update_image(image, update_width=100):
+                width, height = image.size
+                ratio = height/width
+                update_height = int(update_width * ratio)
+                update_image = image.resize((update_width, update_height))
+                return(update_image)
+
+
+            def greyscale(image):
+                grayscale_image = image.convert("L")
+                return(grayscale_image)
+    
+
+            def pixels(image):
+                pixels = image.getdata()
+                characters = "".join([Characters[pixel//25] for pixel in pixels])
+                return(characters)    
+
+            def main(update_width=100):
+                engine.say("Enter file path")
+                path = input("Enter File Path: \n")
+                image = PIL.Image.open(path)
+                update_image_data = pixels(greyscale(update_image(image)))
+
+                number_of_pixels = len(update_image_data)  
+                ascii_img = "\n".join([update_image_data[index:(index+update_width)] for index in range(0, number_of_pixels, update_width)])
+    
+                engine.say("Here is your image converted to ASCII style")
+                print("Here Is Your Image Converted To ASCII Style 🖼️ : ")
+                print(ascii_img)
+                engine.runAndWait()
+    
+            main()
 
         def play_song():#Plays song through spotify
             import time
@@ -817,6 +855,7 @@ def TALIA_main():
             'wiki': wiki,
             'youtube': youtube,
             'video': video,
+            'image': image,
             'play_song': play_song,
             'app': app,
             'version': version,
