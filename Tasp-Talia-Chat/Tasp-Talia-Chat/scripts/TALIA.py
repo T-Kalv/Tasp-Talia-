@@ -40,6 +40,7 @@ from PIL import Image
 from playsound import playsound
 import calendar
 import randfacts
+import subprocess
 
 # info
 version_name = "v3.0.6-public-beta-preview"
@@ -551,6 +552,16 @@ def TALIA_main():
             print(Fore.GREEN)
             print("Last Update: "+last_update)
             print(Fore.WHITE)
+
+        def networking():#Displays network info
+            print("Here's your system networking information 🖥️ : ")
+            engine.say("Here's your system networking information")
+            print(Fore.WHITE)
+            network_data = subprocess.check_output(['ipconfig','/all']).decode('utf-8').split('\n') #Tracerses the ipconfig info
+            for item in network_data:
+                print(item.split('\r')[:-1])#Outputs the ipconfig info in a readable format
+            engine.runAndWait()
+
             
 
         def wordle():
@@ -944,6 +955,7 @@ def TALIA_main():
             'news': news,
             'covid': covid,
             'speed_test': speed_test,
+            'networking': networking,
             'wordle': wordle,
             'snake': snake,
             'games': games,

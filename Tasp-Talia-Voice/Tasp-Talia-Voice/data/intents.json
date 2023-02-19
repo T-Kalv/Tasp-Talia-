@@ -152,6 +152,13 @@
 
 },
 
+    {"tag": "networking", 
+    "patterns": ["networking", "ipconfig", "ipconfig /all", "networking settings", "network settings", "network info", "network inform", "network"],
+    "responses": ["Displaying networking info..."]
+
+
+},
+
     {"tag": "wordle", 
     "patterns": ["wordle", "wordle game"],
     "responses": ["Playing Wordle..."]
