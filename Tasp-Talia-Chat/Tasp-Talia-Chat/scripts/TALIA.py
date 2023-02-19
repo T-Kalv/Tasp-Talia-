@@ -43,8 +43,8 @@ import randfacts
 import subprocess
 
 # info
-version_name = "v3.0.6-public-beta-preview"
-last_update = "18/02/23"
+version_name = "v3.0.7-public-beta-preview"
+last_update = "19/02/23"
 
 
 engine = pyttsx3.init()
@@ -102,7 +102,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v3.0.6-public-beta-preview')
+        print(Fore.CYAN +'Version: v3.0.7-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -370,28 +370,21 @@ def TALIA_main():
             engine.runAndWait()
             print(f"{translation.origin} ({translation.src}) --> {translation.text} ({translation.dest})")
             
-        def news():#NEED TO FIX!!!
-            from requests_html import HTMLSession
-            session = HTMLSession()
-            url = 'https://news.google.com/topstories'#Shows news from Google News
-            r = session.get(url)
-            r.html.render(sleep=1, scrolldown=2)
-            articles = r.html.find('article')
-            newslist = []
-            for item in articles:
-                try:
-                    newsitem = item.find('h3', first=True)
-                    newsarticle = {
-                    'title' : newsitem.text,
-                    'link': newsitem.absolute_links
-                    }
-                    newslist.append(newsarticle)
-                except:
-                    pass
-            print("Here's the latest news...")
-            engine.say("Here is the latest news")
+        def news():#Displays top 10 news headlines
+            from bs4 import BeautifulSoup
+            print("Here are the top 10 news headlines 📰:")
+            engine.say("Here are the top 10 news headlines")
             engine.runAndWait()
-            print(newslist)
+            url = 'https://news.google.com/news/rss'
+            request = requests.get(url)
+            soup = BeautifulSoup(request.content, 'xml')
+            headlines = soup.findAll('item')[:10]
+            news = [news.title.text for news in headlines]
+            for x in news:
+                print(x)
+                engine.say(x)
+                engine.runAndWait()
+
 
         def covid():#Shows covid-19 data to user
             url = "https://www.worldometers.info/coronavirus/"
