@@ -801,7 +801,7 @@ def TALIA_main():
             print("Here's a random fact for you: ")
             engine.say("Here's a random fact for you")
             print(random_facts)
-            print("*Disclaimer: The Facts Provided May Not Always True!")
+            print("*Disclaimer: The Facts Provided May Not Always be True!")
             engine.say(random_facts)
             engine.runAndWait()
 
