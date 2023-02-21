@@ -216,6 +216,15 @@
 
 },
 
+
+    {"tag": "quadratic_solver",
+    "patterns": ["quadratic solver", "quadratics", "algebra", "equation/func", "equations", "fucntions"],
+    "responses": ["Solving quadratic equation..."]
+
+
+},
+
+
     {"tag": "chart_plot", 
     "patterns": ["plot chart", "chart plot", "plot stock", "stock chart"],
     "responses": ["Plotting Chart..."]

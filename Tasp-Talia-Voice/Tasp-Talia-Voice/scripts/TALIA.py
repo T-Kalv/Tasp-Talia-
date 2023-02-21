@@ -42,6 +42,7 @@ import calendar
 import speech_recognition
 import randfacts
 import subprocess
+import cmath
 
 # info
 version_name = "v3.0.7-public-beta-preview"
@@ -805,6 +806,36 @@ def TALIA_main():
             engine.say(random_facts)
             engine.runAndWait()
 
+        def quadratic_solver():
+            print("Here's the Quadratic Solver: ")
+            engine.say("Here's the Quadratic Solver")
+            engine.runAndWait()
+            print(Fore.GREEN)
+            print("ax^2 + bx + c = 0")
+            print(Fore.WHITE)
+            print("Please enter the values of a, b and c!")
+            engine.say("Please enter the values of a, b and c")
+            engine.runAndWait()
+            a = float(input("a: "))
+            b = float(input("b: "))
+            c = float(input("c: "))
+            d = (b**2) - (4*a*c)
+            if d > 0:
+                x1 = (-b-cmath.sqrt(d))/(2*a)
+                x2 = (-b+cmath.sqrt(d))/(2*a)
+                print("x = {0} or x = {1}".format(x1, x2))
+                engine.say("x = {0} or x = {1}".format(x1, x2))
+                engine.runAndWait()
+            elif d == 0:
+                x1 = -b/(2*a)
+                print("x = {0}".format(x1))
+                engine.say("x = {0}".format(x1))
+                engine.runAndWait()
+            else:
+                print("No soltions exist!")
+                engine.say("No soltions exist")
+                engine.runAndWait()
+
 
 
 
@@ -965,6 +996,7 @@ def TALIA_main():
             'world': world,
             'unit_converter': unit_converter,
             'random_fact': random_fact,
+            'quadratic_solver': quadratic_solver,
             'clear': clear,
             'understand': understand,
             'periodic_table': periodic_table,
