@@ -46,7 +46,7 @@ import cmath
 
 # info
 version_name = "v3.0.7-public-beta-preview"
-last_update = "19/01/23"
+last_update = "21/01/23"
 
 
 engine = pyttsx3.init()
