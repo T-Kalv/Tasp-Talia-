@@ -453,7 +453,7 @@ def TALIA_main():
             print("Here are some commands you can ask me 😃: ")
             engine.say("Here are some commands you can ask me ")
             engine.runAndWait()
-            commands = ["time", "date", "calendar", "weather", "about", "clear", "joke", "wiki", "app", "qrcode", "youtube", "video", "song", "video", "lights", "translate", "wordle", "news", "covid", "periodic table",  "plot chart", "add stock", "remove stock", "portfolio value", "stock value"]
+            commands = ["time", "date", "calendar", "weather", "about", "clear", "joke", "wiki", "app", "qrcode", "youtube", "video", "image", "song", "video", "lights", "translate", "wordle", "news", "covid", "periodic table", "networking", "world", "unit converter", "random facts", "quadratic solvers",  "plot chart", "add stock", "remove stock", "portfolio value", "stock value"]
             print('\n'.join(commands))
             engine.say('\n'.join(commands))
             engine.runAndWait()
