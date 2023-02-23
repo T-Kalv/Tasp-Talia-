@@ -692,8 +692,8 @@ def TALIA_main():
                     engine.say("Sorry I can't provide code for that right now!")
                     print("Sorry I can't provide code for that right now!")
             else:
-                engine.say("Unfortunaly, I don't support that programming language right now. Please try a different programming langauge instead!")
-                print("Unfortunaly, I don't support that programming language right now. Please try a different programming langauge instead!")
+                engine.say("Unfortunaly, I don't support that programming language right now. Please try a different programming language instead!")
+                print("Unfortunaly, I don't support that programming language right now. Please try a different programming language instead!")
             engine.runAndWait()    
             
         def world():
