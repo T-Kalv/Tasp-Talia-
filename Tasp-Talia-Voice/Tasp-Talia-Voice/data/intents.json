@@ -229,6 +229,14 @@
 
 },
 
+
+    {"tag": "route_calculator",
+    "patterns": ["route calculator", "waze", "navigation", "map", "navigator", "route", "route checker", "destination"],
+    "responses": ["Displaying route..."]
+
+
+},
+
     {"tag": "chart_plot", 
     "patterns": ["plot chart", "chart plot", "plot stock", "stock chart"],
     "responses": ["Plotting Chart..."]
