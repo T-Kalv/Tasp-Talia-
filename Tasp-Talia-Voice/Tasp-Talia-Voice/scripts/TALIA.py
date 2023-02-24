@@ -46,8 +46,8 @@ import cmath
 import WazeRouteCalculator
 
 # info
-version_name = "v3.0.7-public-beta-preview"
-last_update = "23/02/23"
+version_name = "v3.0.8-public-beta-preview"
+last_update = "24/02/23"
 
 
 engine = pyttsx3.init()
@@ -837,7 +837,7 @@ def TALIA_main():
                 engine.say("No soltions exist")
                 engine.runAndWait()
 
-        def journey_calculator():#NEED TO ROUTE_CALCULATOR CODE
+        def journey_calculator():
             print("Here's the Journey Calculator: ")
             engine.say("Here's the Journey Calculator")
             engine.runAndWait()

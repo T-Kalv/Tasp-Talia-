@@ -832,7 +832,7 @@ def TALIA_main():
                 engine.say("No soltions exist")
                 engine.runAndWait()
 
-        def journey_calculator():#NEED TO ROUTE_CALCULATOR CODE
+        def journey_calculator():
             print("Here's the Journey Calculator: ")
             engine.say("Here's the Journey Calculator")
             engine.runAndWait()
