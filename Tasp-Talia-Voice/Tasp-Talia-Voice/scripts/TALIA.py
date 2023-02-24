@@ -43,10 +43,11 @@ import speech_recognition
 import randfacts
 import subprocess
 import cmath
+import WazeRouteCalculator
 
 # info
 version_name = "v3.0.7-public-beta-preview"
-last_update = "21/01/23"
+last_update = "23/02/23"
 
 
 engine = pyttsx3.init()
@@ -110,7 +111,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v3.0.6-public-beta-preview')
+        print(Fore.CYAN +'Version: v3.0.7-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -836,12 +837,24 @@ def TALIA_main():
                 engine.say("No soltions exist")
                 engine.runAndWait()
 
-        def route_calculator():
-            print("INSERT ROUTE CALCULATOR CODE HERE!")
-
-
-
-
+        def journey_calculator():#NEED TO ROUTE_CALCULATOR CODE
+            print("Here's the Journey Calculator: ")
+            engine.say("Here's the Journey Calculator")
+            engine.runAndWait()
+            from_address = input("Enter Starting Location: ")#Format: e.g. London, United Kingdom...
+            engine.say("Enter Starting Location")
+            engine.runAndWait()
+            to_address = input("Enter Destination: ")#Format: e.g. London, United Kingdom...
+            engine.say("Enter Destination")
+            engine.runAndWait()
+            region = input("Enter Region: ")#Format: e.g EU, US...
+            engine.say("Enter Region")
+            engine.runAndWait()
+            journey = WazeRouteCalculator.WazeRouteCalculator(from_address, to_address, region)
+            journey_time, journey_distance = journey.calc_route_info()
+            print ('Time: %.2f mins, Distance: %.2f km' % (journey_time, journey_distance))
+            engine.say('Time: %.2f mins, Distance: %.2f km' % (journey_time, journey_distance))
+            engine.runAndWait()
 
         def clear():#Clears the terminal to default view
             response = input("Would you like to clear the termial/cli 🥺 [Y/n]?")
@@ -1000,6 +1013,7 @@ def TALIA_main():
             'unit_converter': unit_converter,
             'random_fact': random_fact,
             'quadratic_solver': quadratic_solver,
+            'journey_calculator': journey_calculator,
             'clear': clear,
             'understand': understand,
             'periodic_table': periodic_table,

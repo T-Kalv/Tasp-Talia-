@@ -224,8 +224,8 @@
 
 },
 
-    {"tag": "route_calculator",
-    "patterns": ["route calculator", "waze", "navigation", "map", "navigator", "route", "route checker", "destination"],
+    {"tag": "journey_calculator",
+    "patterns": ["route calculator", "waze", "navigation", "map", "navigator", "route", "route checker", "destination", "journey", "journey calculator", "journey time", "route time"],
     "responses": ["Displaying route..."]
 
 
