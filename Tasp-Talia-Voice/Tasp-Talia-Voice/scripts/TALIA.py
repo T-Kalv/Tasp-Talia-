@@ -46,8 +46,8 @@ import cmath
 import WazeRouteCalculator
 
 # info
-version_name = "v3.0.8-public-beta-preview"
-last_update = "24/02/23"
+version_name = "v3.0.9-public-beta-preview"
+last_update = "31/03/23"
 
 
 engine = pyttsx3.init()
@@ -111,7 +111,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v3.0.7-public-beta-preview')
+        print(Fore.CYAN +'Version: v3.0.9-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -563,6 +563,15 @@ def TALIA_main():
             for item in network_data:
                 print(item.split('\r')[:-1])#Outputs the ipconfig info in a readable format
             engine.runAndWait()
+
+        def wifi_networks():#Displays wifi networks
+            wifi_devices = subprocess.check_output(['netsh','wlan','show','network'])
+            wifi_devices = wifi_devices.decode('ascii')
+            wifi_devices= wifi_devices.replace("\r","")
+            engine.say("Here are the available WiFi networks")
+            engine.runAndWait()
+            print("Here are the available WiFi networks: ")
+            print(wifi_devices)
             
 
         def wordle():
@@ -1004,6 +1013,7 @@ def TALIA_main():
             'covid': covid,
             'speed_test': speed_test,
             'networking': networking,
+            'wifi_networks': wifi_networks,
             'wordle': wordle,
             'snake': snake,
             'games': games,

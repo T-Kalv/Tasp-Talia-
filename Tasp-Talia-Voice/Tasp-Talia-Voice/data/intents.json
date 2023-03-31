@@ -159,6 +159,13 @@
 
 },
 
+    {"tag": "wifi_networks",
+    "patterns": ["wifi", "wifi devices", "wlan", "netsh", "wifi networks"],
+    "responses": ["Displaying available WiFi Networks..."]
+
+
+},
+
     {"tag": "wordle", 
     "patterns": ["wordle", "wordle game"],
     "responses": ["Playing Wordle..."]
