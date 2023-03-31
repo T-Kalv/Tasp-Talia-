@@ -116,8 +116,13 @@ def TALIA_main():
         engine.say("Systems are now fully operational")
         engine.runAndWait()
         print(Fore.WHITE)
-        print('Status: '+ Fore.GREEN + 'ONLINE')
-        print(Fore.WHITE)
+        try:
+            urllib.request.urlopen('http://google.com')#Check if internet is connected
+            print('Status: '+ Fore.GREEN + 'ONLINE')
+            print(Fore.WHITE)
+        except:
+            print('Status: '+ Fore.RED + 'ONLINE')
+            print(Fore.WHITE)
         now = datetime.datetime.now()
         print(now)
         print("\n")
