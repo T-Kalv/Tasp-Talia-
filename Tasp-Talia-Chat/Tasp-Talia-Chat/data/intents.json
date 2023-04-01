@@ -256,6 +256,13 @@
 
 },
 
+    {"tag": "repeat", 
+    "patterns": ["can you repeat this", "repeat after me", "repeat", "say this"],
+    "responses": ["Here's what you said..."]
+
+
+},
+
     {"tag": "update_portfolio", 
     "patterns": ["new stock", "add stock", "add stock to portfolio", "add stock to list"],
     "responses": ["Adding Stock To Portfolio..."]

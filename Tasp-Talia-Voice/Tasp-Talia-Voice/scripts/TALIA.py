@@ -46,8 +46,8 @@ import cmath
 import WazeRouteCalculator
 
 # info
-version_name = "v3.0.9-public-beta-preview"
-last_update = "31/03/23"
+version_name = "v3.0.10-public-beta-preview"
+last_update = "01/04/23"
 
 
 engine = pyttsx3.init()
@@ -870,6 +870,13 @@ def TALIA_main():
             engine.say('Time: %.2f mins, Distance: %.2f km' % (journey_time, journey_distance))
             engine.runAndWait()
 
+        def repeat():
+            engine.say("What would you like me to say? ")
+            engine.runAndWait()
+            text = input("What would you like me to say? \n")
+            engine.say(text)
+            engine.runAndWait()
+
         def clear():#Clears the terminal to default view
             response = input("Would you like to clear the termial/cli 🥺 [Y/n]?")
             if response in ['y', 'Y']:
@@ -1029,6 +1036,7 @@ def TALIA_main():
             'random_fact': random_fact,
             'quadratic_solver': quadratic_solver,
             'journey_calculator': journey_calculator,
+            'repeat': repeat,
             'clear': clear,
             'understand': understand,
             'periodic_table': periodic_table,
