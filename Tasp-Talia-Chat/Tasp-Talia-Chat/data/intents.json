@@ -119,6 +119,12 @@
 
 },
 
+    {"tag": "screenshot", 
+    "patterns": ["screenshot", "take a screenshot", "take screenshot", "capture screen", "capture screenshot", "capture screen shot", "capture screen shot"],
+    "responses": ["Taking Screenshot..."]
+
+},
+
 
     {"tag": "philips_hue", 
     "patterns": ["light", "lights", "philips hue", "philips"],

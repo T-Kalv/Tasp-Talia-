@@ -44,6 +44,7 @@ import randfacts
 import subprocess
 import cmath
 import WazeRouteCalculator
+from PIL import ImageGrab
 
 # info
 version_name = "v3.0.10-public-beta-preview"
@@ -291,6 +292,18 @@ def TALIA_main():
     
             main()
 
+        def screenshot():#Takes a screenshot of the users screen
+            downloads = os.path.expanduser('~/Downloads')
+            screenshot_time = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+
+            print("Taking Screenshot In 5 Seconds 🖼️...")
+            engine.say("Taking Screenshot In 5 Seconds")
+            engine.runAndWait()
+            time.sleep(5)
+            screenshot = ImageGrab.grab()
+            screenshot.save(os.path.join(downloads, f'screenshot-{screenshot_time}.png'))
+            print("Screenshot Saved In Downloads Folder! 🖼️")
+            engine.say("Screenshot Saved In Downloads Folder")
 
         def play_song():#Plays song through spotify
             import time
@@ -999,6 +1012,7 @@ def TALIA_main():
             'youtube': youtube,
             'video': video,
             'image': image,
+            'screenshot': screenshot,
             'play_song': play_song,
             'website': website,
             'version': version,
