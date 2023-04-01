@@ -89,8 +89,8 @@
 
 },
 
-    {"tag": "app", 
-    "patterns": ["open app", "open", "app", "application"],
+    {"tag": "website", 
+    "patterns": ["open website", "website", "url", "web browser", "open url", "open web browser", "open website"],
     "responses": ["Opening..."]
 
 },

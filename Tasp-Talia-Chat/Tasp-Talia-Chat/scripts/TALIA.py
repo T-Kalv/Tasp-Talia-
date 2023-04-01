@@ -114,7 +114,8 @@ def TALIA_main():
             print('Status: '+ Fore.GREEN + 'ONLINE')
             print(Fore.WHITE)
         except:
-            print('Status: '+ Fore.RED + 'ONLINE')
+            print('Status: '+ Fore.RED + 'OFFLINE')
+            print("Some features may not work properly. Please check your internet connection. 🌐")
             print(Fore.WHITE)
         print(Fore.WHITE)
         now = datetime.datetime.now()
@@ -302,31 +303,14 @@ def TALIA_main():
             engine.runAndWait()
             
 
-        def app():#NEED TO FIX!!!
-            engine.say("What would you like to open?")
-            response = input("What would you like to open? 🖥️ ")
-            engine.say("Sorry Open Command is unavailable at the moment!")
-            print(Fore.RED + 'Sorry Open Command is unavailable atm 😥!')
-            print(Fore.WHITE)
-            #if "youtube" or "yt" or "YouTube" or "you tube" or "You Tube" in response:
-            #    engine.say("Opening YouTube...")
-            #    webbrowser.open("youtube.com")
-            #elif "google" in response:
-            #    engine.say("Opening Google...")
-            #    webbrowser.open("google.com")
-            # "stackoverflow" or "stack overflow" in response:
-            #engine.say("Opening Stackoverflow...")
-            #    webbrowser.open("stackoverflow.com") 
-            #elif "github" or "GitHub" in response:
-            #    engine.say("Opening GitHub...")
-            #    webbrowser.open("github.com")
-            #elif "duckduckgo" in response:
-            #    engine.say("Opening Duckduckgo...")
-            #    webbrowser == ("duckduckgo.com")
-            #else:
-            #    engine.say("Sorry I don't understand!")
-            #    print("Sorry I don't understand!")
+        def website():#NEED TO FIX!!!
+            engine.say("Enter the url of the website you would like to open ")
             engine.runAndWait()
+            print("Enter the url of the website you would like to open 🖥️: ")
+            url = input()
+            engine.say("Opening " + url)
+            engine.runAndWait()
+            webbrowser.open(url)  
       
         def access_lights(bridge_ip_address):
             b = Bridge(bridge_ip_address)
@@ -1011,7 +995,7 @@ def TALIA_main():
             'video': video,
             'image': image,
             'play_song': play_song,
-            'app': app,
+            'website': website,
             'version': version,
             'philips_hue': philips_hue,
             'translate': translate,
