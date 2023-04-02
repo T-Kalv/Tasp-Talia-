@@ -47,8 +47,8 @@ import WazeRouteCalculator
 from PIL import ImageGrab
 
 # info
-version_name = "v3.0.10-public-beta-preview"
-last_update = "01/04/23"
+version_name = "v3.0.11-public-beta-preview"
+last_update = "02/04/23"
 
 
 engine = pyttsx3.init()
@@ -112,7 +112,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v3.0.9-public-beta-preview')
+        print(Fore.CYAN +'Version: v3.0.11-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -629,11 +629,26 @@ def TALIA_main():
         def snake():
             print("Add snake cli code!")
 
+        def flip_coin():
+            coin = random.randint(0,1)
+            print("Flipping Coin...")
+            engine.say("Flipping Coin")
+            engine.runAndWait()
+            time.sleep(4)
+            if coin == 0:
+                print("The Coin Landed On Heads")
+                engine.say("The Coin Landed on Heads")
+                engine.runAndWait()
+            else:
+                print("The Coin Landed On Tails")
+                engine.say("The Coin Landed On Tails")
+                engine.runAndWait()
+
         def games():#Displays available games that you can play
             engine.say("Here are the games you can play")
             print("Here are the games you can play:")
-            engine.say("wordle")
-            print("wordle")
+            engine.say("wordle, snake, flip coin")
+            print("wordle, snake, flip coin")
             engine.runAndWait()
 
 
@@ -1025,6 +1040,7 @@ def TALIA_main():
             'wifi_networks': wifi_networks,
             'wordle': wordle,
             'snake': snake,
+            'flip_coin': flip_coin,
             'games': games,
             'qrcode': qrcode,
             'code': code,

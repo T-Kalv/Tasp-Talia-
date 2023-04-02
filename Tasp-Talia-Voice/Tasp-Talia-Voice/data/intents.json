@@ -193,6 +193,13 @@
 
 },
 
+    {"tag": "flip_coin", 
+    "patterns": ["flip a coin", "flip coin", "coin flip", "coin", "heads or tails", "tails or heads"],
+    "responses": ["Flipping Coin..."]
+
+
+},
+
     {"tag": "qrcode", 
     "patterns": ["qrcode", "generate qrcode", "make qrcode", "show qrcode", "display qrcode"],
     "responses": ["Generating qrcode..."]

@@ -190,6 +190,13 @@
 
 },
 
+    {"tag": "flip_coin", 
+    "patterns": ["flip a coin", "flip coin", "coin flip", "coin", "heads or tails", "tails or heads"],
+    "responses": ["Flipping Coin..."]
+
+
+},
+
     {"tag": "games", 
     "patterns": ["games", "game", "play game", "plsy games"],
     "responses": ["Games..."]
