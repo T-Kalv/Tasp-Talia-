@@ -57,6 +57,7 @@ random fact
 quadratic solver
 waze
 repeat
+periodic table
 plot chart
 add stock
 remove stock
