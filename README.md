@@ -31,24 +31,38 @@ help
 date
 time
 weather
-clear
 joke
 wiki
-app
-youtube
-song
-video
-lights
-translate
-periodic table
-wordle
 news
+calendar
+wiki
+youtube
+video
+image
+screenshot
+spotify
+website
+translate
+lights
 covid
+networking
+version
+wordle
+flip coin
+qrcode
+code
+world
+unit converter
+random fact
+quadratic solver
+waze
+repeat
 plot chart
 add stock
 remove stock
 portfolio value
 stock value
+
 ```
 * You can use these commands or even ***similar relating commands*** in Talia as **Talia** is trained using pre-trained models to understand similar commands like YouTube can be understood from yt, youtube, you tube, YouTube, You Tube, vid, video...
 
