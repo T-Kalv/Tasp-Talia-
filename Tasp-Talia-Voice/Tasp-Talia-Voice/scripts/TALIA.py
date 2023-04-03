@@ -45,10 +45,11 @@ import subprocess
 import cmath
 import WazeRouteCalculator
 from PIL import ImageGrab
+import psutil
 
 # info
-version_name = "v3.0.11-public-beta-preview"
-last_update = "02/04/23"
+version_name = "v3.0.12-public-beta-preview"
+last_update = "03/04/23"
 
 
 engine = pyttsx3.init()
@@ -112,7 +113,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v3.0.11-public-beta-preview')
+        print(Fore.CYAN +'Version: v3.0.12-public-beta-preview')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -529,12 +530,6 @@ def TALIA_main():
                 input('To Continue Press The ENTER KEY!!!')
             engine.runAndWait()
 
-
-
-
-
-
-
         def version():#Shows system/app info
             print(Fore.CYAN)
             print("About Talia Voice:")
@@ -544,11 +539,21 @@ def TALIA_main():
             time.sleep(1)
             my_system = platform.uname()
             print()
-            print("Edition: Voice")
+            print(Fore.CYAN)
+            print("Edition: Tasp-Talia Voice 2023")
+            print(Fore.WHITE)
             print(f"OS: {my_system.system}")
+            print(f"Release: {my_system.release}")
+            print(f"Kernel: {platform.release()}\n")
+            print(f"Uptime: {datetime.timedelta(seconds=round(time.time() - psutil.boot_time()))}")
             print(f"Device Name: {my_system.node}")
             print(f"Machine: {my_system.machine}")
             print(f"Processor: {my_system.processor}\n")
+            print(f"Storage: {psutil.disk_usage('/').total >> 30} GB")
+            print(f"RAM: {psutil.virtual_memory().total >> 20} MB")
+            print(f"Resolution: {pyautogui.size()}")
+            print(f"Network Usage: {psutil.net_io_counters().bytes_recv >> 20} MB")
+            print(f"Python Version: {platform.python_version()}\n")
             print(Fore.YELLOW)
             print("Software Version Number: "+ version_name)
             print("Software Type: Public-Beta-Preview")
