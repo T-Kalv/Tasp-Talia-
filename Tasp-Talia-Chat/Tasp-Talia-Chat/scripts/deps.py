@@ -1,13 +1,10 @@
 import pip
 
-def install():
-    print("installing deps")
-    pip.main([
+packages = [
         "install",
 
         # tells pip to install the packages below,
         # MAKE SURE EACH ENTRY ENDS WITH A COMMA!!!
-
         "windows-curses",
         "pandas-datareader",
         "pystray",
@@ -35,7 +32,16 @@ def install():
         # end of packages
 
         "--exists-action","i"
-    ])
+]
+
+def install():
+
+    # remove windows-curses if not on windows
+    if os.name != "nt":
+        packages.remove("windows-curses")
+
+    print("installing deps")
+    pip.main(packages)
     
     # this thing
     import nltk
