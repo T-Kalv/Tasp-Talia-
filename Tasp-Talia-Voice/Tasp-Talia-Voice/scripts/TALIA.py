@@ -48,8 +48,8 @@ from PIL import ImageGrab
 import psutil
 
 # info
-version_name = "v3.0.12-public-beta-preview"
-last_update = "03/04/23"
+version_name = "v3.0.13-public-beta-preview"
+last_update = "2023-04-06"
 
 
 engine = pyttsx3.init()
