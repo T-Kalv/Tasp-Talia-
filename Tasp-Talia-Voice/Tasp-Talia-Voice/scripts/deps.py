@@ -13,6 +13,7 @@ packages = [
         "pyfiglet",
         "neuralintents",
         "matplotlib",
+        "catppuccin-matplotlib",
         "mplfinance",
         "requests",
         "pyttsx3",
@@ -37,6 +38,7 @@ packages = [
 def install():
 
     # remove windows-curses if not on windows
+    import os
     if os.name != "nt":
         packages.remove("windows-curses")
 

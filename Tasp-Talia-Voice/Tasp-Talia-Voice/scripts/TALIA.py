@@ -1,7 +1,9 @@
 # TALIA Voice aka Totally Artificial Language Intelligence Assistant Voice Edition
 import pyfiglet
 from neuralintents import GenericAssistant
+import matplotlib as mpl
 import matplotlib.pyplot as plt
+import mplcatppuccin
 import pandas_datareader as web
 import mplfinance as mpf
 import pickle
@@ -54,6 +56,7 @@ last_update = "2023-04-06"
 
 engine = pyttsx3.init()
 engine.setProperty('rate', 220) 
+mpl.style.use('mocha')
 
 def TALIA_main():
     import time
