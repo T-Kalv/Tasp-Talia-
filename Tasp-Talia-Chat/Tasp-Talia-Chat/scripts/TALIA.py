@@ -1,7 +1,9 @@
 # TALIA Chat aka Totally Artificial Language Intelligence Assistant Chat Edition
 import pyfiglet
 from neuralintents import GenericAssistant
+import matplotlib as mpl
 import matplotlib.pyplot as plt
+import mplcatppuccin
 import pandas_datareader as web
 import mplfinance as mpf
 import pickle
@@ -47,12 +49,13 @@ from PIL import ImageGrab
 import psutil
 
 # info
-version_name = "v3.0.12-public-beta-preview"
-last_update = "03/04/23"
+version_name = "v3.0.13-public-beta-preview"
+last_update = "2023-04-06"
 
 
 engine = pyttsx3.init()
 engine.setProperty('rate', 220) 
+mpl.style.use('mocha')
 
 def TALIA_main():
     import time
@@ -468,7 +471,7 @@ def TALIA_main():
 
         def periodic_table():#Displays the period table in the termianl
             #period_table.csv source = https://physicallychemist.blogspot.com/2014/05/periodic-table-as-text.html
-            periodicTableFile = open('periodic_table.csv', encoding='utf-8')#Opens the Periodic table csv file and reads it and closes it to access the data
+            periodicTableFile = open('assets/periodic_table.csv', encoding='utf-8')#Opens the Periodic table csv file and reads it and closes it to access the data
             periodTableReader = csv.reader(periodicTableFile)
             elements = list(periodTableReader)
             periodicTableFile.close()
@@ -605,7 +608,7 @@ def TALIA_main():
 
 
             wordle_list = []
-            wordle_file = open("wordle_words.txt")
+            wordle_file = open("assets/wordle_words.txt")
             for word in wordle_file:
                 wordle_list.append(word.strip())
             answer = random.choice(wordle_list)
