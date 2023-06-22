@@ -49,8 +49,8 @@ from PIL import ImageGrab
 import psutil
 
 # info
-version_name = "v3.0.13-public-beta-preview"
-last_update = "2023-04-06"
+version_name = "v4.0.0-alpha"
+last_update = "2023-06-22"
 
 
 engine = pyttsx3.init()
@@ -109,7 +109,7 @@ def TALIA_main():
                ascii=False, ncols=75):
             time.sleep(0.05)
         print("\n")
-        print(Fore.CYAN +'Version: v3.0.12-public-beta-preview')
+        print(Fore.CYAN +'Version: v4.0.0-alpha')
         print(Fore.WHITE)
         engine.say("Systems are now fully operational")
         engine.runAndWait()
@@ -540,7 +540,7 @@ def TALIA_main():
             my_system = platform.uname()
             print()
             print(Fore.CYAN)
-            print("Edition: Tasp-Talia Chat 2023")
+            print("Edition: Tasp-Talia Chat June 2023")
             print(Fore.WHITE)
             print(f"OS: {my_system.system}")
             print(f"Release: {my_system.release}")
@@ -556,7 +556,7 @@ def TALIA_main():
             print(f"Python Version: {platform.python_version()}\n")
             print(Fore.YELLOW)
             print("Software Version Number: "+ version_name)
-            print("Software Type: Public-Beta-Preview")
+            print("Software Type: Public-Launch-Release")
             print(Fore.GREEN)
             print("Last Update: "+last_update)
             print(Fore.WHITE)
