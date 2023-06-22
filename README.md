@@ -1,4 +1,4 @@
-# ![image](https://user-images.githubusercontent.com/48865863/186471247-8d5de3ab-fb7e-4c5b-abd2-9d0cdf243cab.png)
+![image](https://github.com/T-Kalv/Tasp-Talia-/assets/48865863/7c2c8989-ee90-4924-a1d9-d1604b4fcb11)
 ## 💲T.A.S.P (Totally Auto Stock Pinger) Now Built With 🌐T.A.L.I.A (Totally Artificial Language Intelligence Assistant
 
 ![GitHub top language](https://img.shields.io/github/languages/top/T-KALV/T.A.S.P?style=plastic)
